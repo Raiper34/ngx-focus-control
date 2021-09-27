@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "ngx-focus-control": {
+      "projectType": "library",
+      "root": "projects/ngx-focus-control",
+      "sourceRoot": "projects/ngx-focus-control/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-focus-control/tsconfig.lib.json",
+            "project": "projects/ngx-focus-control/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-focus-control/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-focus-control/src/test.ts",
+            "tsConfig": "projects/ngx-focus-control/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-focus-control/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-focus-control/tsconfig.lib.json",
+              "projects/ngx-focus-control/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ngx-focus-control-app"
 }
