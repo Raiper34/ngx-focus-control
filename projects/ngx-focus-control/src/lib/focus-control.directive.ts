@@ -1,4 +1,5 @@
-import {Directive, ElementRef, HostListener, Input} from '@angular/core';
+import {Directive, HostListener, Inject, Input} from '@angular/core';
+import {DOCUMENT} from '@angular/common';
 
 interface FocusControlConfig {
   previous?: string;
@@ -20,17 +21,17 @@ export class FocusControlDirective {
 
   private _config: FocusControlConfig;
 
-  constructor() {
+  constructor(@Inject(DOCUMENT) private readonly document: any) {
   }
 
   @HostListener(`keydown`, ['$event']) goTo($event: KeyboardEvent) {
     if ($event.key === 'Tab') {
       if ($event.shiftKey && this.config.previous) {
         $event.preventDefault();
-        (document.querySelector(this.config.previous) as HTMLElement)?.focus();
+        (this.document.querySelector(this.config.previous) as HTMLElement)?.focus();
       } else if (!$event.shiftKey && this.config.next) {
         $event.preventDefault();
-        (document.querySelector((this.config.next)) as HTMLElement)?.focus();
+        (this.document.querySelector((this.config.next)) as HTMLElement)?.focus();
       }
     }
   }

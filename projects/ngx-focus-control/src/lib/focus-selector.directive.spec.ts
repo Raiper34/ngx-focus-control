@@ -1,4 +1,4 @@
-import { FocusControlDirective } from './focus-control.directive';
+import { FocusSelectorDirective } from './focus-selector.directive';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {Component, DebugElement} from '@angular/core';
 import {By} from '@angular/platform-browser';
@@ -6,9 +6,9 @@ import {By} from '@angular/platform-browser';
 @Component({
   selector: 'lib-test-component',
   template: `
-    <input id="input-1" [ngxFocusControl]="{next: '#input-3', previous: '#input-2'}">
-    <input id="input-2" [ngxFocusControl]="{next: '#input-1', previous: '#input-3'}">
-    <input id="input-3" [ngxFocusControl]="{next: '#input-2', previous: '#input-1'}">
+    <input class="focus-selector-item" id="input-1" [ngxFocusSelector]="'.focus-selector-item'">
+    <input id="input-2">
+    <input class="focus-selector-item" id="input-3" [ngxFocusSelector]="'.focus-selector-item'">
   `
 })
 class TestComponent {}
@@ -29,14 +29,14 @@ class TestHelper {
 
 }
 
-describe('FocusControlDirective', () => {
+describe('FocusSelectorDirective', () => {
 
   let fixture: ComponentFixture<TestComponent>;
   let helper: TestHelper;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FocusControlDirective, TestComponent],
+      declarations: [FocusSelectorDirective, TestComponent],
     });
     TestBed.compileComponents();
     fixture = TestBed.createComponent(TestComponent);
@@ -45,19 +45,19 @@ describe('FocusControlDirective', () => {
   });
 
   it('should create an instance', () => {
-    const directive = new FocusControlDirective(null);
+    const directive = new FocusSelectorDirective(null, null);
     expect(directive).toBeTruthy();
   });
 
-  it('should go to next user defined element', () => {
-    const focusedElement = fixture.debugElement.query(By.css('#input-2'));
+  it('should go to next element with given selector', () => {
+    const focusedElement = fixture.debugElement.query(By.css('#input-1'));
     helper.moveFocus(focusedElement);
-    helper.checkFocus('#input-1');
+    helper.checkFocus('#input-3');
   });
 
-  it('should go to previous user defined element', () => {
-    const focusedElement = fixture.debugElement.query(By.css('#input-2'));
+  it('should go to previous element with given selector', () => {
+    const focusedElement = fixture.debugElement.query(By.css('#input-3'));
     helper.moveFocus(focusedElement, true);
-    helper.checkFocus('#input-3');
+    helper.checkFocus('#input-1');
   });
 });

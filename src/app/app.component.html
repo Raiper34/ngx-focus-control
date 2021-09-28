@@ -10,7 +10,8 @@
     <p class="title">Focus control directive</p>
     <p class="subtitle">
       Focus control directive allows you to control next and previous focused element of current element.
-      Example shows how to revert order of focus using this directive. Focus element and try to navigate with tab and tab + shift.
+      Example shows how to revert order of focus using this directive. Focus element and try to navigate with tab and
+      tab + shift.
     </p>
     <input type="text" placeholder="Input 1" class="input" id="input-1"
            [ngxFocusControl]="{next: '#input-3', previous: '#input-2'}">
@@ -27,10 +28,32 @@
   </div>
 </section>
 
-<!-- Focus class directive -->
+<!-- Focus selector directive -->
 <section class="hero is-primary">
   <div class="hero-body">
-    <p class="title">Focus class directive</p>
+    <p class="title">Focus selector directive</p>
+    <p class="subtitle">
+      Focus selector directive allows you to focus only element by given selector. Input 5 do not have this directive, so it is skipped from focus flow, but it is still accessible.
+      Focus element and try to navigate with tab and tab + shift.
+    </p>
+    <input type="text" placeholder="Input 4" class="input focus-selector-item"
+           [ngxFocusSelector]="'.focus-selector-item'">
+    <input type="text" placeholder="Input 5" class="input">
+    <input type="text" placeholder="Input 6" class="input focus-selector-item"
+           [ngxFocusSelector]="'.focus-selector-item'">
+    <article class="message">
+      <div class="message-header"><p>Code</p></div>
+      <div class="message-body">
+        <pre><code>{{focusSelectorCode}}</code></pre>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Focus master directive -->
+<section class="hero">
+  <div class="hero-body">
+    <p class="title">Focus master directive</p>
     <p class="subtitle">
       TODO
     </p>
@@ -53,11 +76,11 @@
     </p>
     TODO
     <article class="message">
-    <div class="message-header"><p>Code</p></div>
-    <div class="message-body">
-      <pre><code>TODO</code></pre>
-    </div>
-  </article>
+      <div class="message-header"><p>Code</p></div>
+      <div class="message-body">
+        <pre><code>TODO</code></pre>
+      </div>
+    </article>
   </div>
 </section>
 
