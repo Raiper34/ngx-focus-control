@@ -1,0 +1,10 @@
+language: node_js
+node_js: '12'
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+  - ng lint ngx-focus-control
+  - ng test ngx-focus-control
+  - ng build ngx-focus-control --configuration production
