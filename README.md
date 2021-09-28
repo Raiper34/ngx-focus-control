@@ -1,3 +1,6 @@
+[![npm version](https://badge.fury.io/js/ngx-focus-control.svg)](https://badge.fury.io/js/ngx-focus-control)
+[![Build Status](https://app.travis-ci.com/Raiper34/ngx-focus-control.svg?branch=main)](https://app.travis-ci.com/Raiper34/ngx-focus-control)
+
 # NgxFocusControlApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
