@@ -8,8 +8,11 @@
     "build:lib": "ng build ngx-focus-control --configuration production",
     "test": "ng test",
     "test:lib": "ng test ngx-focus-control",
+    "test:lib:dev": "ng test ngx-focus-control --watch=true --browsers=Chrome",
     "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
     "lint:lib": "ng lint ngx-focus-control",
+    "lint:lib:fix": "ng lint ngx-focus-control --fix",
     "e2e": "ng e2e"
   },
   "private": true,

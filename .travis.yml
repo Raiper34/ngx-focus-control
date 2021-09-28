@@ -5,6 +5,6 @@ before_script:
   - npm install -g @angular/cli
 
 script:
-  - ng lint ngx-focus-control
-  - ng test ngx-focus-control
-  - ng build ngx-focus-control --configuration production
+  - npm run lint:lib
+  - npm run test:lib
+  - npm run build:lib
