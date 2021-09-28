@@ -5,8 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:lib": "ng build ngx-focus-control --configuration production",
     "test": "ng test",
+    "test:lib": "ng test ngx-focus-control",
     "lint": "ng lint",
+    "lint:lib": "ng lint ngx-focus-control",
     "e2e": "ng e2e"
   },
   "private": true,
