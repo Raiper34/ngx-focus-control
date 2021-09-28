@@ -1,3 +1,74 @@
-<input type="text" placeholder="Input 1" id="input-1" [ngxFocusControl]="{next: '#input-3', previous: '#input-2'}">
-<input type="text" placeholder="Input 2" id="input-2" [ngxFocusControl]="{next: '#input-1', previous: '#input-3'}">
-<input type="text" placeholder="Input 3" id="input-3" [ngxFocusControl]="{next: '#input-2', previous: '#input-1'}">
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item title has-text-white	"><span class="">Ngx Focus Control</span></span>
+  </div>
+</nav>
+
+<!-- Focus control directive -->
+<section class="hero">
+  <div class="hero-body">
+    <p class="title">Focus control directive</p>
+    <p class="subtitle">
+      Focus control directive allows you to control next and previous focused element of current element.
+      Example shows how to revert order of focus using this directive. Focus element and try to navigate with tab and tab + shift.
+    </p>
+    <input type="text" placeholder="Input 1" class="input" id="input-1"
+           [ngxFocusControl]="{next: '#input-3', previous: '#input-2'}">
+    <input type="text" placeholder="Input 2" class="input" id="input-2"
+           [ngxFocusControl]="{next: '#input-1', previous: '#input-3'}">
+    <input type="text" placeholder="Input 3" class="input" id="input-3"
+           [ngxFocusControl]="{next: '#input-2', previous: '#input-1'}">
+    <article class="message">
+      <div class="message-header"><p>Code</p></div>
+      <div class="message-body">
+        <pre><code>{{focusControlCode}}</code></pre>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Focus class directive -->
+<section class="hero is-primary">
+  <div class="hero-body">
+    <p class="title">Focus class directive</p>
+    <p class="subtitle">
+      TODO
+    </p>
+    TODO
+    <article class="message">
+      <div class="message-header"><p>Code</p></div>
+      <div class="message-body">
+        <pre><code>TODO</code></pre>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Focus group directive -->
+<section class="hero">
+  <div class="hero-body">
+    <p class="title">Focus group directive</p>
+    <p class="subtitle">
+      TODO
+    </p>
+    TODO
+    <article class="message">
+    <div class="message-header"><p>Code</p></div>
+    <div class="message-body">
+      <pre><code>TODO</code></pre>
+    </div>
+  </article>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Ngx focus control</strong> by <a href="https://gulan.sk">Filip Raiper34 Gulan</a>. The source code is
+      licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+    </p>
+  </div>
+</footer>
