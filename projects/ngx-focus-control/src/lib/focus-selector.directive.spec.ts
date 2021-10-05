@@ -1,7 +1,8 @@
 import { FocusSelectorDirective } from './focus-selector.directive';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {Component, DebugElement} from '@angular/core';
+import {Component} from '@angular/core';
 import {By} from '@angular/platform-browser';
+import {TestHelper} from './test-helper';
 
 @Component({
   selector: 'lib-test-component',
@@ -13,26 +14,10 @@ import {By} from '@angular/platform-browser';
 })
 class TestComponent {}
 
-class TestHelper {
-
-  constructor(private readonly fixture: ComponentFixture<TestComponent>) {}
-
-  moveFocus(element: DebugElement, shiftKey: boolean = false): void {
-    element.nativeElement.dispatchEvent(new KeyboardEvent('keydown', {key: 'Tab', shiftKey}));
-    this.fixture.detectChanges();
-  }
-
-  checkFocus(selector: string): void {
-    const expected = this.fixture.debugElement.query(By.css(selector));
-    expect(document.activeElement).toBe(expected.nativeElement);
-  }
-
-}
-
 describe('FocusSelectorDirective', () => {
 
   let fixture: ComponentFixture<TestComponent>;
-  let helper: TestHelper;
+  let helper: TestHelper<TestComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -41,7 +26,7 @@ describe('FocusSelectorDirective', () => {
     TestBed.compileComponents();
     fixture = TestBed.createComponent(TestComponent);
     fixture.detectChanges();
-    helper = new TestHelper(fixture);
+    helper = new TestHelper(fixture, expect);
   });
 
   it('should create an instance', () => {

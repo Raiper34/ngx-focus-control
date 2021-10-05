@@ -1,10 +1,32 @@
 [![npm version](https://badge.fury.io/js/ngx-focus-control.svg)](https://badge.fury.io/js/ngx-focus-control)
 [![Build Status](https://app.travis-ci.com/Raiper34/ngx-focus-control.svg?branch=main)](https://app.travis-ci.com/Raiper34/ngx-focus-control)
 
-# ngx-focus-control
-Ngx-focus-control is library with directives to control flow of focus.  
-- ngx-focus-control
-- ngx-focus-class
-- ngx-focus-group
+#Ngx-focus-control
+This angular library is here to simplify work with user defined accessibility. It adds multiple directives to make elements more user-friendly accessible with keyboard.
+Library contains:
+- Focus control directive
+- Focus selector directive
+- Focus parent directive
+- Focus group directive TODO
 
-##[Demo](https://ngx-focus-control.netlify.app/)
+#Instalation
+
+`npm install ngx-focus-control --save`
+
+then add `NgxFocusControlModule` into module imports
+```
+import {NgxFocusControlModule} from 'ngx-focus-control';
+
+@NgModule({
+// ...
+imports: [
+    // ...
+    NgxFocusControlModule,
+    // ...
+],
+// ...
+})
+```
+
+#Usage
+See [DEMO](https://ngx-focus-control.netlify.app/) app for usage.

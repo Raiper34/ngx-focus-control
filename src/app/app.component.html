@@ -9,9 +9,9 @@
   <div class="hero-body">
     <p class="title">Focus control directive</p>
     <p class="subtitle">
-      Focus control directive allows you to control next and previous focused element of current element.
-      Example shows how to revert order of focus using this directive. Focus element and try to navigate with tab and
-      tab + shift.
+      This directive allows the user to manually define the next and/or previous focus target.
+      Example shows how to revert direction of focus.
+      Focus the first element and navigate using the keyboard (Tab and Shift + Tab).
     </p>
     <input type="text" placeholder="Input 1" class="input" id="input-1"
            [ngxFocusControl]="{next: '#input-3', previous: '#input-2'}">
@@ -33,8 +33,9 @@
   <div class="hero-body">
     <p class="title">Focus selector directive</p>
     <p class="subtitle">
-      Focus selector directive allows you to focus only element by given selector. Input 5 do not have this directive, so it is skipped from focus flow, but it is still accessible.
-      Focus element and try to navigate with tab and tab + shift.
+      This directive allows the user to manually define the next and previous focus target by the given class. It can be configured to behave in the cycle (if it is the last element with the given class, the next focus target is the first element with the given class).
+      Example shows how to skip element between elements with this class (element is still accessible by mouse).
+      Focus the first element and navigate using the keyboard (Tab and Shift + Tab).
     </p>
     <input type="text" placeholder="Input 4" class="input focus-selector-item"
            [ngxFocusSelector]="'.focus-selector-item'">
@@ -50,25 +51,34 @@
   </div>
 </section>
 
-<!-- Focus master directive -->
+<!-- Focus parent directive -->
 <section class="hero">
   <div class="hero-body">
-    <p class="title">Focus master directive</p>
+    <p class="title">Focus parent directive</p>
     <p class="subtitle">
-      TODO
+      This directive behaves very similarly to Focus selector directive, only the user can access focusable elements between elements with this directive by pressing Enter.
+      Example shows how to focus div element and its content (content is focusable by click or enter).
+      Focus the first div and navigate using the keyboard (Tab and Shift + Tab and Enter).
     </p>
-    TODO
+    <div tabindex="0" id="parent-1" class="box focus-selector-parent" [ngxFocusParent]="'.focus-selector-parent'">
+      <input type="text" placeholder="Input 7" class="input" id="input-7">
+      <input type="text" placeholder="Input 8" class="input" id="input-8">
+    </div>
+    <div tabindex="0" id="parent-2" class="box focus-selector-parent" [ngxFocusParent]="'.focus-selector-parent'">
+      <input type="text" placeholder="Input 9" class="input" id="input-9">
+      <input type="text" placeholder="Input 10" class="input" id="input-10">
+    </div>
     <article class="message">
       <div class="message-header"><p>Code</p></div>
       <div class="message-body">
-        <pre><code>TODO</code></pre>
+        <pre><code>{{focusParentCode}}</code></pre>
       </div>
     </article>
   </div>
 </section>
 
 <!-- Focus group directive -->
-<section class="hero">
+<section class="hero is-primary">
   <div class="hero-body">
     <p class="title">Focus group directive</p>
     <p class="subtitle">

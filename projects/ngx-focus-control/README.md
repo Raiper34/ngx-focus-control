@@ -1,24 +1,32 @@
-# NgxFocusControl
+[![npm version](https://badge.fury.io/js/ngx-focus-control.svg)](https://badge.fury.io/js/ngx-focus-control)
+[![Build Status](https://app.travis-ci.com/Raiper34/ngx-focus-control.svg?branch=main)](https://app.travis-ci.com/Raiper34/ngx-focus-control)
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.13.
+#Ngx-focus-control
+This angular library is here to simplify work with user defined accessibility. It adds multiple directives to make elements more user-friendly accessible with keyboard.
+Library contains:
+- Focus control directive
+- Focus selector directive
+- Focus parent directive
+- Focus group directive TODO
 
-## Code scaffolding
+#Instalation
 
-Run `ng generate component component-name --project ngx-focus-control` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-focus-control`.
-> Note: Don't forget to add `--project ngx-focus-control` or else it will be added to the default project in your `angular.json` file. 
+`npm install ngx-focus-control --save`
 
-## Build
+then add `NgxFocusControlModule` into module imports
+```
+import {NgxFocusControlModule} from 'ngx-focus-control';
 
-Run `ng build ngx-focus-control` to build the project. The build artifacts will be stored in the `dist/` directory.
+@NgModule({
+// ...
+imports: [
+    // ...
+    NgxFocusControlModule,
+    // ...
+],
+// ...
+})
+```
 
-## Publishing
-
-After building your library with `ng build ngx-focus-control`, go to the dist folder `cd dist/ngx-focus-control` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ngx-focus-control` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#Usage
+See [DEMO](https://ngx-focus-control.netlify.app/) app for usage.
