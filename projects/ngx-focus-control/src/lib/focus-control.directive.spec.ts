@@ -36,13 +36,13 @@ describe('FocusControlDirective', () => {
 
   it('should go to next user defined element', () => {
     const focusedElement = fixture.debugElement.query(By.css('#input-2'));
-    helper.moveFocus(focusedElement);
+    helper.tab(focusedElement);
     helper.checkFocus('#input-1');
   });
 
   it('should go to previous user defined element', () => {
     const focusedElement = fixture.debugElement.query(By.css('#input-2'));
-    helper.moveFocus(focusedElement, true);
+    helper.tab(focusedElement, true);
     helper.checkFocus('#input-3');
   });
 });

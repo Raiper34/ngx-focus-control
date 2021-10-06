@@ -26,4 +26,10 @@ export class AppComponent {
       <input type="text" placeholder="Input 9" class="input" id="input-9">
       <input type="text" placeholder="Input 10" class="input" id="input-10">
     </div>`;
+
+  focusGroupCode = `
+    <div tabindex="0" id="group-1" class="box focus-selector-parent" [ngxFocusGroup]="'.focus-group-item'">
+      <input type="text" tabindex="-1" placeholder="Input 11" class="input focus-group-item" id="input-11">
+      <input type="text" tabindex="-1" placeholder="Input 12" class="input focus-group-item" id="input-12">
+    </div>`;
 }

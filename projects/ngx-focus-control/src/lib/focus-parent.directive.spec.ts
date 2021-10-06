@@ -42,13 +42,13 @@ describe('FocusParentDirective', () => {
 
   it('should go to next parent element with given selector', () => {
     const focusedElement = fixture.debugElement.query(By.css('#parent-1'));
-    helper.moveFocus(focusedElement);
+    helper.tab(focusedElement);
     helper.checkFocus('#parent-2');
   });
 
   it('should go to previous parent element with given selector', () => {
     const focusedElement = fixture.debugElement.query(By.css('#parent-2'));
-    helper.moveFocus(focusedElement, true);
+    helper.tab(focusedElement, true);
     helper.checkFocus('#parent-1');
   });
 

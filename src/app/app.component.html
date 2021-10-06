@@ -1,4 +1,4 @@
-<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+<nav class="navbar is-info" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <span class="navbar-item title has-text-white	"><span class="">Ngx Focus Control</span></span>
   </div>
@@ -29,11 +29,11 @@
 </section>
 
 <!-- Focus selector directive -->
-<section class="hero is-primary">
+<section class="hero is-info">
   <div class="hero-body">
     <p class="title">Focus selector directive</p>
     <p class="subtitle">
-      This directive allows the user to manually define the next and previous focus target by the given class. It can be configured to behave in the cycle (if it is the last element with the given class, the next focus target is the first element with the given class).
+      This directive allows the user to manually define the next and previous focus target by the given class.
       Example shows how to skip element between elements with this class (element is still accessible by mouse).
       Focus the first element and navigate using the keyboard (Tab and Shift + Tab).
     </p>
@@ -56,7 +56,7 @@
   <div class="hero-body">
     <p class="title">Focus parent directive</p>
     <p class="subtitle">
-      This directive behaves very similarly to Focus selector directive, only the user can access focusable elements between elements with this directive by pressing Enter.
+      This directive behaves very similarly to Focus selector directive, only the user can access focusable child elements with this directive by pressing Enter.
       Example shows how to focus div element and its content (content is focusable by click or enter).
       Focus the first div and navigate using the keyboard (Tab and Shift + Tab and Enter).
     </p>
@@ -78,17 +78,22 @@
 </section>
 
 <!-- Focus group directive -->
-<section class="hero is-primary">
+<section class="hero is-info">
   <div class="hero-body">
     <p class="title">Focus group directive</p>
     <p class="subtitle">
-      TODO
+      This directive allows merging focusable elements into the group. The user focuses the whole group and can enter into this group by Enter press and leave the group by Escape press.
+      Example shows the box with the group of buttons (buttons are not accessible, only when the user enters the group).
+      Focus the first div and enter group (Enter) then leave the group (Escape) or navigate (Tab and Shift + Tab).
     </p>
-    TODO
+    <div tabindex="0" id="group-1" class="box focus-selector-parent" [ngxFocusGroup]="'.focus-group-item'">
+      <input type="text" tabindex="-1" placeholder="Input 11" class="input focus-group-item" id="input-11">
+      <input type="text" tabindex="-1" placeholder="Input 12" class="input focus-group-item" id="input-12">
+    </div>
     <article class="message">
       <div class="message-header"><p>Code</p></div>
       <div class="message-body">
-        <pre><code>TODO</code></pre>
+        <pre><code>{{focusGroupCode}}</code></pre>
       </div>
     </article>
   </div>
