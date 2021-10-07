@@ -6,11 +6,11 @@ import {Helper} from './helper';
 const FOCUSABLE_ELEMENTS_WITHIN_SELECTOR = `:scope ${FOCUSABLE_ELEMENTS_SELECTOR}`;
 
 @Directive({
-  selector: '[ngxFocusParent]'
+  selector: '[fuParent]'
 })
 export class FocusParentDirective {
 
-  @Input('ngxFocusParent') selector: string;
+  @Input('fuParent') selector: string;
 
   constructor(@Inject(DOCUMENT) protected readonly document: any,
               protected readonly el: ElementRef) {

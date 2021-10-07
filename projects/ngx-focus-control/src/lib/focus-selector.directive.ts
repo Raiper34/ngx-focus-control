@@ -2,11 +2,11 @@ import {Directive, ElementRef, HostListener, Inject, Input, Optional} from '@ang
 import {DOCUMENT} from '@angular/common';
 
 @Directive({
-  selector: '[ngxFocusSelector]'
+  selector: '[fuSelector]'
 })
 export class FocusSelectorDirective {
 
-  @Input('ngxFocusSelector') selector: string;
+  @Input('fuSelector') selector: string;
 
   constructor(@Inject(DOCUMENT) private readonly document: any,
               private readonly el: ElementRef) {

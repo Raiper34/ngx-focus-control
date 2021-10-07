@@ -1,7 +1,7 @@
 {
   "name": "ngx-focus-control",
-  "version": "0.2.0",
-  "description": "This angular library is here to simplify work with user defined accessibility. It adds multiple directives to make elements more user-friendly accessible with keyboard.",
+  "version": "1.0.0",
+  "description": "Library to provide tools to work with focus and focusable elements to improve user interfaces and accessibility.",
   "repository": "https://github.com/Raiper34/ngx-focus-control",
   "homepage": "https://ngx-focus-control.netlify.app/",
   "license": "MIT",

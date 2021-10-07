@@ -7,9 +7,9 @@ import {TestHelper} from './test-helper';
 @Component({
   selector: 'lib-test-component',
   template: `
-    <input class="focus-selector-item" id="input-1" [ngxFocusSelector]="'.focus-selector-item'">
+    <input class="focus-selector-item" id="input-1" [fuSelector]="'.focus-selector-item'">
     <input id="input-2">
-    <input class="focus-selector-item" id="input-3" [ngxFocusSelector]="'.focus-selector-item'">
+    <input class="focus-selector-item" id="input-3" [fuSelector]="'.focus-selector-item'">
   `
 })
 class TestComponent {}

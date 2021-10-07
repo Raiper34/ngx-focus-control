@@ -7,11 +7,11 @@ interface FocusControlConfig {
 }
 
 @Directive({
-  selector: '[ngxFocusControl]'
+  selector: '[fuControl]'
 })
 export class FocusControlDirective {
 
-  @Input('ngxFocusControl') set config(val: FocusControlConfig) {
+  @Input('fuControl') set config(val: FocusControlConfig) {
     this._config = val;
   }
 

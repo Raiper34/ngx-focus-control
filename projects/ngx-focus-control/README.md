@@ -4,8 +4,10 @@
 ![NPM](https://img.shields.io/npm/l/ngx-focus-control)
 
 # Ngx-focus-control
-This angular library is here to simplify work with user defined accessibility. It adds multiple directives to make elements more user-friendly accessible with keyboard.
+Library to provide tools to work with focus and focusable elements to improve user interfaces and accessibility.
+
 Library contains:
+- Focus auto directive
 - Focus control directive
 - Focus selector directive
 - Focus parent directive

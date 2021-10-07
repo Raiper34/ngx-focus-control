@@ -22,7 +22,7 @@ const DEFAULT_TAB_INDEX = 0;
 const TAB_GROUP_CONTEXT_ATTR = 'data-tabGroupContext';
 
 @Directive({
-  selector: '[ngxFocusGroup]'
+  selector: '[fuGroup]'
 })
 export class FocusGroupDirective {
 
@@ -30,7 +30,7 @@ export class FocusGroupDirective {
   childKeyDownEventListener = this.childKeyDown.bind(this);
   elementBlurEventListener = this.elementBlurFunction.bind(this);
 
-  @Input('ngxFocusGroup') config: FocusGroupConfig;
+  @Input('fuGroup') config: FocusGroupConfig;
 
   get selector(): string {
     return this.config?.selector || DEFAULT_SELECTOR;

@@ -7,11 +7,11 @@ import {By} from '@angular/platform-browser';
 @Component({
   selector: 'lib-test-component',
   template: `
-    <div tabindex="0" id="parent-1" class="focus-selector-parent" [ngxFocusParent]="'.focus-selector-parent'">
+    <div tabindex="0" id="parent-1" class="focus-selector-parent" [fuParent]="'.focus-selector-parent'">
       <input class="focus-selector-item" id="input-1">
       <input class="focus-selector-item" id="input-2">
     </div>
-    <div tabindex="0" id="parent-2" class="focus-selector-parent" [ngxFocusParent]="'.focus-selector-parent'">
+    <div tabindex="0" id="parent-2" class="focus-selector-parent" [fuParent]="'.focus-selector-parent'">
       <input class="focus-selector-item" id="input-3">
       <input class="focus-selector-item" id="input-4">
     </div>

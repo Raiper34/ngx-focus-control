@@ -7,7 +7,7 @@ import {By} from '@angular/platform-browser';
 @Component({
   selector: 'lib-test-component',
   template: `
-    <ul id="group-1" [ngxFocusGroup]="{selector: '.group-1-item', tabIndex: 0}" tabindex="0">
+    <ul id="group-1" [fuGroup]="{selector: '.group-1-item', tabIndex: 0}" tabindex="0">
       <li id="group-1-item-1" class="group-1-item">1</li>
       <li id="group-1-item-2" class="group-1-item">2</li>
       <li id="group-1-item-3" class="group-1-item">3</li>

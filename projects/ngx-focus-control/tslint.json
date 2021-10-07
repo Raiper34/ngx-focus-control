@@ -4,7 +4,7 @@
     "directive-selector": [
       true,
       "attribute",
-      "ngx",
+      "fu",
       "camelCase"
     ],
     "component-selector": [

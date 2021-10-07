@@ -1,11 +1,34 @@
 <nav class="navbar is-info" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <span class="navbar-item title has-text-white	"><span class="">Ngx Focus Control</span></span>
+    <a href="/" class="navbar-item title has-text-white	">Ngx Focus Control</a>
+  </div>
+  <div class="navbar-end">
+    <a class="navbar-item" href="https://github.com/Raiper34/ngx-focus-control">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+    </a>
   </div>
 </nav>
 
-<!-- Focus control directive -->
+<!-- Focus auto directive -->
 <section class="hero">
+  <div class="hero-body">
+    <p class="title">Focus auto directive</p>
+    <p class="subtitle">
+      This directive focuses the element after ngAfterViewInit hook and when the delay bidding changes. The user can define the delay. The delay corresponds to usage of setTimeout() function.
+      Example shows input, that should be automatically focused when you have visited this demo.
+    </p>
+    <input type="text" placeholder="Input 0" class="input" id="input-0" [fuAuto]="0">
+    <article class="message">
+      <div class="message-header"><p>Code</p></div>
+      <div class="message-body">
+        <pre><code>{{focusAutoCode}}</code></pre>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Focus control directive -->
+<section class="hero is-info">
   <div class="hero-body">
     <p class="title">Focus control directive</p>
     <p class="subtitle">
@@ -14,11 +37,11 @@
       Focus the first element and navigate using the keyboard (Tab and Shift + Tab).
     </p>
     <input type="text" placeholder="Input 1" class="input" id="input-1"
-           [ngxFocusControl]="{next: '#input-3', previous: '#input-2'}">
+           [fuControl]="{next: '#input-3', previous: '#input-2'}">
     <input type="text" placeholder="Input 2" class="input" id="input-2"
-           [ngxFocusControl]="{next: '#input-1', previous: '#input-3'}">
+           [fuControl]="{next: '#input-1', previous: '#input-3'}">
     <input type="text" placeholder="Input 3" class="input" id="input-3"
-           [ngxFocusControl]="{next: '#input-2', previous: '#input-1'}">
+           [fuControl]="{next: '#input-2', previous: '#input-1'}">
     <article class="message">
       <div class="message-header"><p>Code</p></div>
       <div class="message-body">
@@ -29,7 +52,7 @@
 </section>
 
 <!-- Focus selector directive -->
-<section class="hero is-info">
+<section class="hero">
   <div class="hero-body">
     <p class="title">Focus selector directive</p>
     <p class="subtitle">
@@ -38,10 +61,10 @@
       Focus the first element and navigate using the keyboard (Tab and Shift + Tab).
     </p>
     <input type="text" placeholder="Input 4" class="input focus-selector-item"
-           [ngxFocusSelector]="'.focus-selector-item'">
+           [fuSelector]="'.focus-selector-item'">
     <input type="text" placeholder="Input 5" class="input">
     <input type="text" placeholder="Input 6" class="input focus-selector-item"
-           [ngxFocusSelector]="'.focus-selector-item'">
+           [fuSelector]="'.focus-selector-item'">
     <article class="message">
       <div class="message-header"><p>Code</p></div>
       <div class="message-body">
@@ -52,7 +75,7 @@
 </section>
 
 <!-- Focus parent directive -->
-<section class="hero">
+<section class="hero is-info">
   <div class="hero-body">
     <p class="title">Focus parent directive</p>
     <p class="subtitle">
@@ -60,11 +83,11 @@
       Example shows how to focus div element and its content (content is focusable by click or enter).
       Focus the first div and navigate using the keyboard (Tab and Shift + Tab and Enter).
     </p>
-    <div tabindex="0" id="parent-1" class="box focus-selector-parent" [ngxFocusParent]="'.focus-selector-parent'">
+    <div tabindex="0" id="parent-1" class="box focus-selector-parent" [fuParent]="'.focus-selector-parent'">
       <input type="text" placeholder="Input 7" class="input" id="input-7">
       <input type="text" placeholder="Input 8" class="input" id="input-8">
     </div>
-    <div tabindex="0" id="parent-2" class="box focus-selector-parent" [ngxFocusParent]="'.focus-selector-parent'">
+    <div tabindex="0" id="parent-2" class="box focus-selector-parent" [fuParent]="'.focus-selector-parent'">
       <input type="text" placeholder="Input 9" class="input" id="input-9">
       <input type="text" placeholder="Input 10" class="input" id="input-10">
     </div>
@@ -78,7 +101,7 @@
 </section>
 
 <!-- Focus group directive -->
-<section class="hero is-info">
+<section class="hero">
   <div class="hero-body">
     <p class="title">Focus group directive</p>
     <p class="subtitle">
@@ -86,7 +109,7 @@
       Example shows the box with the group of buttons (buttons are not accessible, only when the user enters the group).
       Focus the first div and enter group (Enter) then leave the group (Escape) or navigate (Tab and Shift + Tab).
     </p>
-    <div tabindex="0" id="group-1" class="box focus-selector-parent" [ngxFocusGroup]="'.focus-group-item'">
+    <div tabindex="0" id="group-1" class="box focus-selector-parent" [fuGroup]="{selector: '.focus-group-item'}">
       <input type="text" tabindex="-1" placeholder="Input 11" class="input focus-group-item" id="input-11">
       <input type="text" tabindex="-1" placeholder="Input 12" class="input focus-group-item" id="input-12">
     </div>

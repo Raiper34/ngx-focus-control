@@ -7,9 +7,9 @@ import {TestHelper} from './test-helper';
 @Component({
   selector: 'lib-test-component',
   template: `
-    <input id="input-1" [ngxFocusControl]="{next: '#input-3', previous: '#input-2'}">
-    <input id="input-2" [ngxFocusControl]="{next: '#input-1', previous: '#input-3'}">
-    <input id="input-3" [ngxFocusControl]="{next: '#input-2', previous: '#input-1'}">
+    <input id="input-1" [fuControl]="{next: '#input-3', previous: '#input-2'}">
+    <input id="input-2" [fuControl]="{next: '#input-1', previous: '#input-3'}">
+    <input id="input-3" [fuControl]="{next: '#input-2', previous: '#input-1'}">
   `
 })
 class TestComponent {}
