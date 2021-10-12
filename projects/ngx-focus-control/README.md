@@ -18,7 +18,7 @@ Library contains:
 `npm install ngx-focus-control --save`
 
 then add `NgxFocusControlModule` into module imports
-```
+```typescript
 import {NgxFocusControlModule} from 'ngx-focus-control';
 
 @NgModule({
