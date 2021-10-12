@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import {FocusControlDirective} from './focus-control.directive';
-import { FocusSelectorDirective } from './focus-selector.directive';
-import { FocusGroupDirective } from './focus-group.directive';
-import { FocusParentDirective } from './focus-parent.directive';
-import { FocusAutoDirective } from './focus-auto.directive';
+import {FocusControlDirective} from './directives/focus-control.directive';
+import { FocusSelectorDirective } from './directives/focus-selector.directive';
+import { FocusGroupDirective } from './directives/focus-group.directive';
+import { FocusParentDirective } from './directives/focus-parent.directive';
+import { FocusAutoDirective } from './directives/focus-auto.directive';
 
 
 

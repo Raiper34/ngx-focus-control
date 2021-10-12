@@ -2,7 +2,7 @@ import { FocusSelectorDirective } from './focus-selector.directive';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {Component} from '@angular/core';
 import {By} from '@angular/platform-browser';
-import {TestHelper} from './test-helper';
+import {TestHelper} from '../helpers/test-helper';
 
 @Component({
   selector: 'lib-test-component',

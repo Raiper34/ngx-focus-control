@@ -1,7 +1,7 @@
 import {FocusParentDirective} from './focus-parent.directive';
 import {Component} from '@angular/core';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {TestHelper} from './test-helper';
+import {TestHelper} from '../helpers/test-helper';
 import {By} from '@angular/platform-browser';
 
 @Component({
