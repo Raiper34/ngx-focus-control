@@ -1,5 +1,5 @@
-import {Directive, ElementRef, HostListener, Inject, Input} from '@angular/core';
-import {Helper} from './helper';
+import {Directive, ElementRef, HostListener, Inject, Input, Renderer2} from '@angular/core';
+import {Helper} from '../helpers/helper';
 import {DOCUMENT} from '@angular/common';
 
 enum Keys { // $event.key
@@ -27,8 +27,8 @@ const TAB_GROUP_CONTEXT_ATTR = 'data-tabGroupContext';
 export class FocusGroupDirective {
 
   activeElement: HTMLElement;
-  childKeyDownEventListener = this.childKeyDown.bind(this);
-  elementBlurEventListener = this.elementBlurFunction.bind(this);
+  childKeyDownEventListener: () => void;
+  elementBlurEventListener: () => void;
 
   @Input('fuGroup') config: FocusGroupConfig;
 
@@ -41,7 +41,8 @@ export class FocusGroupDirective {
   }
 
   constructor(@Inject(DOCUMENT) protected readonly document: any,
-              private readonly el: ElementRef) {
+              protected readonly renderer: Renderer2,
+              protected readonly el: ElementRef) {
   }
 
   @HostListener(`keyup.${Keys.enterGroup}`, ['$event']) enterGroup($event: KeyboardEvent) {
@@ -58,18 +59,18 @@ export class FocusGroupDirective {
 
   private elementBlurFunction($event: Event): void {
     // setTimeout is important here, because next item is focused in next tick
-    setTimeout(() => this.someChildIsFocused() && this.leaveGroup(($event as Event).target as HTMLElement, false));
+    setTimeout(() => !this.someChildIsFocused() && this.leaveGroup(($event as Event).target as HTMLElement, false));
   }
 
   private initializeElement(element: HTMLElement): void {
     if (element) {
       this.activeElement = element;
       if (element.hasAttribute('tabindex')) {
-        element.setAttribute(TAB_GROUP_CONTEXT_ATTR, element.getAttribute('tabindex'));
+        this.renderer.setAttribute(element, TAB_GROUP_CONTEXT_ATTR, element.getAttribute('tabindex'));
       }
-      element.setAttribute('tabindex', String(this.tabIndex));
-      element.addEventListener('keydown', this.childKeyDownEventListener);
-      element.addEventListener('blur', this.elementBlurEventListener);
+      this.renderer.setAttribute(element, 'tabindex', String(this.tabIndex));
+      this.childKeyDownEventListener = this.renderer.listen(element, 'keydown', this.childKeyDown.bind(this));
+      this.elementBlurEventListener = this.renderer.listen(element, 'blur', this.elementBlurFunction.bind(this));
       element.focus();
     }
   }
@@ -77,12 +78,12 @@ export class FocusGroupDirective {
   private disposeElement(element: HTMLElement): void {
     this.activeElement = null;
     if (element.hasAttribute(TAB_GROUP_CONTEXT_ATTR)) {
-      element.setAttribute('tabindex', element.getAttribute(TAB_GROUP_CONTEXT_ATTR));
+      this.renderer.setAttribute(element, 'tabindex', element.getAttribute(TAB_GROUP_CONTEXT_ATTR));
     } else {
-      element.removeAttribute('tabindex');
+      this.renderer.removeAttribute(element, 'tabindex');
     }
-    element.removeEventListener('keydown', this.childKeyDownEventListener);
-    element.removeEventListener('blur', this.elementBlurEventListener);
+    this.childKeyDownEventListener();
+    this.elementBlurEventListener();
   }
 
   private someChildIsFocused(): boolean {

@@ -1,7 +1,7 @@
 import {Directive, ElementRef, HostListener, Inject, Input} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
-import {FOCUSABLE_ELEMENTS_SELECTOR} from './focusable-elements.const';
-import {Helper} from './helper';
+import {FOCUSABLE_ELEMENTS_SELECTOR} from '../helpers/focusable-elements.const';
+import {Helper} from '../helpers/helper';
 
 const FOCUSABLE_ELEMENTS_WITHIN_SELECTOR = `:scope ${FOCUSABLE_ELEMENTS_SELECTOR}`;
 

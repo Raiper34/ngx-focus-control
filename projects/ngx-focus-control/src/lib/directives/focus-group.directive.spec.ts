@@ -1,7 +1,7 @@
 import {FocusGroupDirective} from './focus-group.directive';
 import {Component} from '@angular/core';
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {TestHelper} from './test-helper';
+import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
+import {TestHelper} from '../helpers/test-helper';
 import {By} from '@angular/platform-browser';
 
 @Component({
@@ -35,7 +35,7 @@ describe('FocusGroupDirective', () => {
   });
 
   it('should create an instance', () => {
-    const directive = new FocusGroupDirective(null, null);
+    const directive = new FocusGroupDirective(null, null, null);
     expect(directive).toBeTruthy();
   });
 
@@ -87,5 +87,19 @@ describe('FocusGroupDirective', () => {
     helper.tab(focusedElement3, true);
     helper.checkFocus('#group-1-item-1');
   });
+
+  it('should leave group when click outside of children', fakeAsync(() => {
+    const focusedElement = fixture.debugElement.query(By.css('#group-1'));
+    helper.enter(focusedElement);
+    const focusedElement1 = fixture.debugElement.query(By.css('#group-1-item-1'));
+    focusedElement1.nativeElement.dispatchEvent(new Event('blur'));
+    focusedElement1.nativeElement.blur();
+    fixture.detectChanges();
+    tick(0);
+    fixture.whenStable().then(() => {
+      expect(document.activeElement).not.toBe(focusedElement1.nativeElement);
+      expect(focusedElement1.nativeElement.hasAttribute('tabindex')).toBeFalse();
+    });
+  }));
 
 });

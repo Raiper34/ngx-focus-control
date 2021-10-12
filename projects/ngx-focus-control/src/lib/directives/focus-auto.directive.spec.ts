@@ -1,7 +1,7 @@
 import { FocusAutoDirective } from './focus-auto.directive';
 import {Component} from '@angular/core';
 import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
-import {TestHelper} from './test-helper';
+import {TestHelper} from '../helpers/test-helper';
 
 @Component({
   selector: 'lib-test-component',
