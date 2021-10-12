@@ -1,6 +1,6 @@
 import {FocusGroupDirective} from './focus-group.directive';
 import {Component} from '@angular/core';
-import {async, ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
+import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
 import {TestHelper} from '../helpers/test-helper';
 import {By} from '@angular/platform-browser';
 
