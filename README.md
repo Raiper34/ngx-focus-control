@@ -12,6 +12,7 @@ Library contains:
 - Focus selector directive
 - Focus parent directive
 - Focus group directive
+- Focus lock directive
 
 # Instalation
 

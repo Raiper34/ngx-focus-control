@@ -3,7 +3,8 @@
   "version": "1.0.1",
   "description": "Library to provide tools to work with focus and focusable elements to improve user interfaces and accessibility.",
   "repository": "https://github.com/Raiper34/ngx-focus-control",
-  "homepage": "https://ngx-focus-control.netlify.app/",
+  "homepage": "https://ngx-focus-control.netlify.app",
+  "keywords": ["angular", "accessibility", "directives", "focus"],
   "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^9.1.13",

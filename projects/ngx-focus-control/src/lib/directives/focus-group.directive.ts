@@ -1,16 +1,17 @@
 import {Directive, ElementRef, HostListener, Inject, Input, Renderer2} from '@angular/core';
 import {Helper} from '../helpers/helper';
 import {DOCUMENT} from '@angular/common';
+import {Keys} from '../helpers/keys.enum';
 
-enum Keys { // $event.key
-  enterGroup = 'Enter',
-  leaveGroup = 'Escape',
-  navigation = 'Tab',
-  navNext1 = 'ArrowDown',
-  navNext2 = 'ArrowUp',
-  navPrev1 = 'ArrowRight',
-  navPrev2 = 'ArrowLeft',
-}
+const ControlKeys = {
+  enterGroup: Keys.Enter,
+  leaveGroup: Keys.Escape,
+  navigation: Keys.Tab,
+  navNext1: Keys.ArrowDown,
+  navNext2: Keys.ArrowRight,
+  navPrev1: Keys.ArrowUp,
+  navPrev2: Keys.ArrowLeft,
+};
 
 interface FocusGroupConfig {
   selector?: string;
@@ -45,7 +46,7 @@ export class FocusGroupDirective {
               protected readonly el: ElementRef) {
   }
 
-  @HostListener(`keyup.${Keys.enterGroup}`, ['$event']) enterGroup($event: KeyboardEvent) {
+  @HostListener(`keyup.${ControlKeys.enterGroup}`, ['$event']) enterGroup($event: KeyboardEvent) {
     Helper.stopEvent($event);
     const elements = this.getFocusableChildren();
     if (!this.activeElement && elements[0]) {
@@ -91,7 +92,7 @@ export class FocusGroupDirective {
   }
 
   private childKeyDown($event: KeyboardEvent): void {
-    if ($event.key === Keys.leaveGroup) {
+    if ($event.key === ControlKeys.leaveGroup) {
       Helper.stopEvent($event);
       this.leaveGroup(($event as Event).target as HTMLElement);
     } else if (this.isPreviousNavigationKey($event)) {
@@ -104,11 +105,13 @@ export class FocusGroupDirective {
   }
 
   private isPreviousNavigationKey($event: KeyboardEvent): boolean {
-    return ($event.key === Keys.navigation && $event.shiftKey) || $event.key === Keys.navPrev1 || $event.key === Keys.navPrev2;
+    return ($event.key === ControlKeys.navigation && $event.shiftKey) ||
+      $event.key === ControlKeys.navPrev1 || $event.key === ControlKeys.navPrev2;
   }
 
   private isNextNavigationKey($event: KeyboardEvent): boolean {
-    return ($event.key === Keys.navigation && !$event.shiftKey) || $event.key === Keys.navNext1 || $event.key === Keys.navNext2;
+    return ($event.key === ControlKeys.navigation && !$event.shiftKey) ||
+      $event.key === ControlKeys.navNext1 || $event.key === ControlKeys.navNext2;
   }
 
   private focusPrevious(current: HTMLElement): void {

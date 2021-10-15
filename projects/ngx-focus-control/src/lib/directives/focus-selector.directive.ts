@@ -1,5 +1,6 @@
-import {Directive, ElementRef, HostListener, Inject, Input, Optional} from '@angular/core';
+import {Directive, ElementRef, HostListener, Inject, Input} from '@angular/core';
 import {DOCUMENT} from '@angular/common';
+import {Keys} from '../helpers/keys.enum';
 
 @Directive({
   selector: '[fuSelector]'
@@ -13,7 +14,7 @@ export class FocusSelectorDirective {
   }
 
   @HostListener(`keydown`, ['$event']) goTo($event: KeyboardEvent) {
-    if ($event.key === 'Tab') {
+    if ($event.key === Keys.Tab) {
       const elements = Array.from(this.document.querySelectorAll(this.selector));
       const index = elements.findIndex(item => item === this.el.nativeElement);
       if ($event.shiftKey && index > 0) {
