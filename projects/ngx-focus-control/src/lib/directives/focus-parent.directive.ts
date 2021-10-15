@@ -2,6 +2,7 @@ import {Directive, ElementRef, HostListener, Inject, Input} from '@angular/core'
 import {DOCUMENT} from '@angular/common';
 import {FOCUSABLE_ELEMENTS_SELECTOR} from '../helpers/focusable-elements.const';
 import {Helper} from '../helpers/helper';
+import {Keys} from '../helpers/keys.enum';
 
 const FOCUSABLE_ELEMENTS_WITHIN_SELECTOR = `:scope ${FOCUSABLE_ELEMENTS_SELECTOR}`;
 
@@ -16,7 +17,7 @@ export class FocusParentDirective {
               protected readonly el: ElementRef) {
   }
 
-  @HostListener(`keyup.enter`, ['$event']) goToChildren($event: KeyboardEvent) {
+  @HostListener(`keyup.${Keys.Enter}`, ['$event']) goToChildren($event: KeyboardEvent) {
     if ($event.srcElement !== this.el.nativeElement) {
       return;
     }
@@ -28,7 +29,7 @@ export class FocusParentDirective {
     if ($event.srcElement !== this.el.nativeElement) {
       return;
     }
-    if ($event.key === 'Tab') {
+    if ($event.key === Keys.Tab) {
       const elements = Array.from(this.document.querySelectorAll(this.selector));
       const index = elements.findIndex(item => item === this.el.nativeElement);
       if ($event.shiftKey && index >  0) {

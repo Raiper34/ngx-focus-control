@@ -1,6 +1,6 @@
 import { FocusAutoDirective } from './focus-auto.directive';
 import {Component} from '@angular/core';
-import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {TestHelper} from '../helpers/test-helper';
 
 @Component({
@@ -37,19 +37,17 @@ describe('FocusAutoDirective', () => {
     helper.checkFocus('#input-1');
   });
 
-  it('should focus element with delay 0ms', fakeAsync(() => {
-    tick(0);
-    fixture.detectChanges();
-    fixture.whenStable().then(() => {
+  it('should focus element with delay 0ms', (done) => {
+    setTimeout(() => {
       helper.checkFocus('#input-2');
-    });
-  }));
+      done();
+    }, 0);
+  });
 
-  it('should focus element with delay 500ms', fakeAsync(() => {
-    tick(500);
-    fixture.detectChanges();
-    fixture.whenStable().then(() => {
+  it('should focus element with delay 500ms', (done) => {
+    setTimeout(() => {
       helper.checkFocus('#input-3');
-    });
-  }));
+      done();
+    }, 500);
+  });
 });

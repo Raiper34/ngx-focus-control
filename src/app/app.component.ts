@@ -34,4 +34,11 @@ export class AppComponent {
       <input type="text" tabindex="-1" placeholder="Input 11" class="input focus-group-item" id="input-11">
       <input type="text" tabindex="-1" placeholder="Input 12" class="input focus-group-item" id="input-12">
     </div>`;
+
+  focusLockCode = `
+    <div id="lock-1" class="box focus-selector-parent" fuLock>
+      <input type="text" placeholder="Input 13" class="input" id="input-13">
+      <input type="text" placeholder="Input 14" class="input" id="input-14">
+      <input type="text" placeholder="Input 15" class="input" id="input-15">
+    </div>`;
 }
