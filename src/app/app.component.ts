@@ -7,6 +7,8 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
+  condition = false;
+
   focusAutoCode = `<input type="text" placeholder="Input 0" class="input" id="input-0" [fuAuto]="0">`;
 
   focusControlCode = `
@@ -41,4 +43,6 @@ export class AppComponent {
       <input type="text" placeholder="Input 14" class="input" id="input-14">
       <input type="text" placeholder="Input 15" class="input" id="input-15">
     </div>`;
+
+  focusIfCode = `<input type="text" placeholder="Input 16" class="input" id="input-16" [fuIf]="condition">`;
 }

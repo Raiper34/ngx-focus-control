@@ -5,6 +5,7 @@ import { FocusGroupDirective } from './directives/focus-group.directive';
 import { FocusParentDirective } from './directives/focus-parent.directive';
 import { FocusAutoDirective } from './directives/focus-auto.directive';
 import { FocusLockDirective } from './directives/focus-lock.directive';
+import { FocusIfDirective } from './directives/focus-if.directive';
 
 
 
@@ -16,6 +17,7 @@ import { FocusLockDirective } from './directives/focus-lock.directive';
     FocusParentDirective,
     FocusAutoDirective,
     FocusLockDirective,
+    FocusIfDirective,
   ],
   imports: [
   ],
@@ -26,6 +28,7 @@ import { FocusLockDirective } from './directives/focus-lock.directive';
     FocusParentDirective,
     FocusAutoDirective,
     FocusLockDirective,
+    FocusIfDirective,
   ]
 })
 export class NgxFocusControlModule { }

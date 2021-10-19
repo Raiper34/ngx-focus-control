@@ -18,7 +18,7 @@ export class FocusParentDirective {
   }
 
   @HostListener(`keyup.${Keys.Enter}`, ['$event']) goToChildren($event: KeyboardEvent) {
-    if ($event.srcElement !== this.el.nativeElement) {
+    if ($event.target !== this.el.nativeElement) {
       return;
     }
     Helper.stopEvent($event);
@@ -26,7 +26,7 @@ export class FocusParentDirective {
   }
 
   @HostListener(`keydown`, ['$event']) protected goTo($event: KeyboardEvent) {
-    if ($event.srcElement !== this.el.nativeElement) {
+    if ($event.target !== this.el.nativeElement) {
       return;
     }
     if ($event.key === Keys.Tab) {
