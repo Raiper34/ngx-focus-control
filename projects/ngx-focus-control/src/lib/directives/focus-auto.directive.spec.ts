@@ -7,8 +7,7 @@ import {TestHelper} from '../helpers/test-helper';
   selector: 'lib-test-component',
   template: `
     <input id="input-1" fuAuto>
-    <input id="input-2" [fuAuto]="0">
-    <input id="input-3" [fuAuto]="500">
+    <input id="input-2" [fuAuto]="500">
   `
 })
 class TestComponent {}
@@ -33,20 +32,16 @@ describe('FocusAutoDirective', () => {
     expect(directive).toBeTruthy();
   });
 
-  it('should focus element', () => {
-    helper.checkFocus('#input-1');
-  });
-
-  it('should focus element with delay 0ms', (done) => {
+  it('should focus element', (done) => {
     setTimeout(() => {
-      helper.checkFocus('#input-2');
+      helper.checkFocus('#input-1');
       done();
     }, 0);
   });
 
   it('should focus element with delay 500ms', (done) => {
     setTimeout(() => {
-      helper.checkFocus('#input-3');
+      helper.checkFocus('#input-2');
       done();
     }, 500);
   });

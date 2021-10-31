@@ -34,25 +34,37 @@ describe('FocusIfDirective', () => {
     expect(directive).toBeTruthy();
   });
 
-  it('should focus element', () => {
-    helper.checkFocus('#input');
+  it('should focus element', (done) => {
+    setTimeout(() => {
+      helper.checkFocus('#input');
+      done();
+    }, 0);
   });
 
-  it('should blur element', () => {
+  it('should blur element', (done) => {
     fixture.componentInstance.value = false;
     fixture.detectChanges();
-    const focusedElement = fixture.debugElement.query(By.css('#input'));
-    expect(document.activeElement).not.toBe(focusedElement.nativeElement);
-  });
-
-  it('should blur element after 1000ms', (done) => {
-    setTimeout(() => helper.checkFocus('#input'), 500);
     setTimeout(() => {
-      fixture.componentInstance.value = false;
-      fixture.detectChanges();
       const focusedElement = fixture.debugElement.query(By.css('#input'));
       expect(document.activeElement).not.toBe(focusedElement.nativeElement);
       done();
+    }, 0);
+  });
+
+  it('should blur element after 1000ms', (done) => {
+    setTimeout(() => {
+      helper.checkFocus('#input');
+      fixture.componentInstance.value = false;
+      fixture.detectChanges();
+    }, 500);
+    setTimeout(() => {
+      fixture.componentInstance.value = false;
+      fixture.detectChanges();
     }, 1000);
+    setTimeout(() => {
+      const focusedElement = fixture.debugElement.query(By.css('#input'));
+      expect(document.activeElement).not.toBe(focusedElement.nativeElement);
+      done();
+    }, 1001);
   });
 });
