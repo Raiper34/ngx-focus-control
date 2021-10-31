@@ -41,8 +41,8 @@ export class FocusLockDirective implements OnInit, OnDestroy {
   }
 
   private disposeLock(): void {
-    this.firstChildKeyDownEventListener();
-    this.lastChildKeyDownEventListener();
+    this.firstChildKeyDownEventListener && this.firstChildKeyDownEventListener();
+    this.lastChildKeyDownEventListener && this.lastChildKeyDownEventListener();
   }
 
   private childKeyDown($event: KeyboardEvent, targetElem: HTMLElement, shouldShiftBePressed: boolean): void {

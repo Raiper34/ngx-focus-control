@@ -11,12 +11,8 @@ export class FocusAutoDirective {
 
   constructor(private readonly el: ElementRef) { }
 
-  private focusElement(delay: number): void {
-    if (String(delay) === '') {
-      this.el.nativeElement.focus();
-    } else {
-      setTimeout(() => this.el.nativeElement.focus(), delay);
-    }
+  protected focusElement(delay: number): void {
+    setTimeout(() => this.el.nativeElement.focus(), delay || 0);
   }
 
 }
