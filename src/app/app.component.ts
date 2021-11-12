@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import {Component} from '@angular/core';
 export class AppComponent {
 
   condition = false;
+  observable$ = new Subject<boolean>();
 
   focusAutoCode = `<input type="text" placeholder="Input 0" class="input" id="input-0" [fuAuto]="0">`;
 
@@ -45,4 +47,5 @@ export class AppComponent {
     </div>`;
 
   focusIfCode = `<input type="text" placeholder="Input 16" class="input" id="input-16" [fuIf]="condition">`;
+  focusObsCode = `<input type="text" placeholder="Input 17" class="input" id="input-17" [fuObs]="observable$">`;
 }

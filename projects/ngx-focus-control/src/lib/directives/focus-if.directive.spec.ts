@@ -45,8 +45,7 @@ describe('FocusIfDirective', () => {
     fixture.componentInstance.value = false;
     fixture.detectChanges();
     setTimeout(() => {
-      const focusedElement = fixture.debugElement.query(By.css('#input'));
-      expect(document.activeElement).not.toBe(focusedElement.nativeElement);
+      helper.checkFocus('#input', true);
       done();
     }, 0);
   });
@@ -62,8 +61,7 @@ describe('FocusIfDirective', () => {
       fixture.detectChanges();
     }, 1000);
     setTimeout(() => {
-      const focusedElement = fixture.debugElement.query(By.css('#input'));
-      expect(document.activeElement).not.toBe(focusedElement.nativeElement);
+      helper.checkFocus('#input', true);
       done();
     }, 1001);
   });
