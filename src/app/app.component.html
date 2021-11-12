@@ -147,7 +147,7 @@
     <div class="container">
       <p class="title">Focus lock directive</p>
       <p class="subtitle">
-        This directive lock some area (div, span...). First and last focusable child of directive element are connected
+        This directive locks some area (div, span...). First and last focusable child of directive element are connected
         together (the next focus target of last child is first child and vice versa), useful for accessible modals.
         Example shows the box, that you can not leave with the keyboard, when you have focused some element.
         Focus the first element and navigate using the keyboard (<span class="tag is-dark">TAB</span> and <span
@@ -174,7 +174,7 @@
     <div class="container">
       <p class="title">Focus if directive</p>
       <p class="subtitle">
-        This directive focuses the element when condition bidding changes to True or blur the element when condition
+        This directive focuses the element when condition bidding changes to True or blurs the element when condition
         biding changes to False.
         Example shows input, that should be focused or blurred based on condition provided. You can change condition by
         button click.
@@ -187,6 +187,29 @@
         <div class="message-header"><p>Code</p></div>
         <div class="message-body">
           <pre><code>{{focusIfCode}}</code></pre>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Focus obs directive -->
+<section class="hero is-info">
+  <div class="hero-body">
+    <div class="container">
+      <p class="title">Focus obs directive</p>
+      <p class="subtitle">
+        This directive focuses element when observable emits True and blur element when observable emits False.
+        Example shows input, that focus state is determined by given observable. You can emit True or False by button
+        click.
+      </p>
+      <input type="text" placeholder="Input 17" class="input" id="input-17" [fuObs]="observable$">
+      <button class="button is-success" (click)="observable$.next(true)">Emit True</button>
+      <button class="button is-danger" (click)="observable$.next(false)">Emit False</button>
+      <article class="message">
+        <div class="message-header"><p>Code</p></div>
+        <div class="message-body">
+          <pre><code>{{focusObsCode}}</code></pre>
         </div>
       </article>
     </div>

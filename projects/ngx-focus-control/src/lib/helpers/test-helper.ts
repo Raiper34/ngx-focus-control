@@ -22,9 +22,13 @@ export class TestHelper<T> {
     this.fixture.detectChanges();
   }
 
-  checkFocus(selector: string): void {
+  checkFocus(selector: string, revertExpect: boolean = false): void {
     const expected = this.fixture.debugElement.query(By.css(selector));
-    this.expectFn(document.activeElement).toBe(expected.nativeElement);
+    if (revertExpect) {
+      this.expectFn(document.activeElement).not.toBe(expected.nativeElement);
+    } else {
+      this.expectFn(document.activeElement).toBe(expected.nativeElement);
+    }
   }
 
 }
