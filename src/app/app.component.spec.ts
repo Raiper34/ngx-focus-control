@@ -1,5 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {FocusHistoryService} from 'ngx-focus-control';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -7,6 +8,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers: [FocusHistoryService]
     }).compileComponents();
   }));
 

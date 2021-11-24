@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {NgxFocusControlModule} from 'ngx-focus-control';
+import {NgxFocusControlModule, FocusHistoryService} from 'ngx-focus-control';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import {NgxFocusControlModule} from 'ngx-focus-control';
 
     NgxFocusControlModule,
   ],
-  providers: [],
+  providers: [FocusHistoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
