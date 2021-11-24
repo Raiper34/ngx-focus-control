@@ -2,7 +2,8 @@
 [![Build Status](https://app.travis-ci.com/Raiper34/ngx-focus-control.svg?branch=main)](https://app.travis-ci.com/Raiper34/ngx-focus-control)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/ngx-focus-control)
 ![NPM](https://img.shields.io/npm/l/ngx-focus-control)
-[![npm version](https://badgen.net/badge/demo/online/orange)](https://ngx-focus-control.netlify.app/)
+[![demo](https://badgen.net/badge/demo/online/orange)](https://ngx-focus-control.netlify.app/)
+[![stack blitz](https://badgen.net/badge/stackblitz/online/orange)](https://stackblitz.com/edit/angular-ivy-nsumon)
 
 # Ngx-focus-control
 Angular library to provide tools to work with focus and focusable elements to improve user interfaces and accessibility.
@@ -52,3 +53,6 @@ focuses the element when condition bidding changes to True or blurs the element 
 biding changes to False.
 - ### Focus obs directive
 focuses element when observable emits True and blur element when observable emits False.
+- ### Focus history directive and service
+Directive store focused element into history and thanks for history service `FocusHistoryService`
+you can go back in focus history using `focusHistoryService.focusPrevious()`.

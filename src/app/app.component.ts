@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Subject} from 'rxjs';
+import {FocusHistoryService} from 'ngx-focus-control';
 
 @Component({
   selector: 'app-root',
@@ -48,4 +49,15 @@ export class AppComponent {
 
   focusIfCode = `<input type="text" placeholder="Input 16" class="input" id="input-16" [fuIf]="condition">`;
   focusObsCode = `<input type="text" placeholder="Input 17" class="input" id="input-17" [fuObs]="observable$">`;
+  focusHistoryCode = `
+    <input type="text" placeholder="Input 18" class="input" id="input-18" fuHistory>
+    <input type="text" placeholder="Input 19" class="input" id="input-19" fuHistory>
+    <button class="button is-success" (click)="focusHistoryService.focusPrevious()">Focus previous</button>
+  `;
+
+  get historyIds(): string[] {
+    return this.focusHistoryService.getHistory().map(item => item.id);
+  }
+
+  constructor(public readonly focusHistoryService: FocusHistoryService) {}
 }
