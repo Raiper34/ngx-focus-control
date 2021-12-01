@@ -11,6 +11,7 @@ export class AppComponent {
 
   condition = false;
   observable$ = new Subject<boolean>();
+  switchValue = '';
 
   focusAutoCode = `<input type="text" placeholder="Input 0" class="input" id="input-0" [fuAuto]="0">`;
 
@@ -49,10 +50,22 @@ export class AppComponent {
 
   focusIfCode = `<input type="text" placeholder="Input 16" class="input" id="input-16" [fuIf]="condition">`;
   focusObsCode = `<input type="text" placeholder="Input 17" class="input" id="input-17" [fuObs]="observable$">`;
+
   focusHistoryCode = `
     <input type="text" placeholder="Input 18" class="input" id="input-18" fuHistory>
     <input type="text" placeholder="Input 19" class="input" id="input-19" fuHistory>
     <button class="button is-success" (click)="focusHistoryService.focusPrevious()">Focus previous</button>
+  `;
+
+  focusSwitchCode = `
+    <ng-container [fuSwitch]="switchValue">
+      <input type="text" placeholder="Input 20" class="input" id="input-20" [fuCase]="'option-1'">
+      <input type="text" placeholder="Input 21" class="input" id="input-21" [fuCase]="'option-2'">
+      <input type="text" placeholder="Input 22" class="input" id="input-22" [fuCase]="'option-3'">
+    </ng-container>
+    <button class="button is-success" (click)="switchValue = 'option-1'">Focus Input 20</button>
+    <button class="button is-success" (click)="switchValue = 'option-2'">Focus Input 21</button>
+    <button class="button is-success" (click)="switchValue = 'option-3'">Focus Input 22</button>
   `;
 
   get historyIds(): string[] {

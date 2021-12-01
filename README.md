@@ -54,5 +54,8 @@ biding changes to False.
 - ### Focus obs directive
 focuses element when observable emits True and blur element when observable emits False.
 - ### Focus history directive and service
-Directive store focused element into history and thanks for history service `FocusHistoryService`
+Directive stores focused element into history and thanks for history service `FocusHistoryService`
 you can go back in focus history using `focusHistoryService.focusPrevious()`.
+- ### Focus switch and case directives
+Focus switch directive on parent element with some variable focuses child element with value provided in
+  focus case directive that matches. It matches first element from top to bottom.
