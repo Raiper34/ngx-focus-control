@@ -10,5 +10,7 @@ export * from './lib/directives/focus-lock.directive';
 export * from './lib/directives/focus-if.directive';
 export * from './lib/directives/focus-observable.directive';
 export * from './lib/directives/focus-history.directive';
+export * from './lib/directives/focus-switch.directive';
+export * from './lib/directives/focus-case.directive';
 export * from './lib/services/focus-history.service';
 export * from './lib/ngx-focus-control.module';

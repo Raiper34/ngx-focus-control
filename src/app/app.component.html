@@ -222,9 +222,10 @@
     <div class="container">
       <p class="title">Focus history directive and service</p>
       <p class="subtitle">
-        Directive store focused element into history and thanks for history service <span class="tag is-dark">FocusHistoryService</span>
+        Directive stores focused element into history and thanks for history service <span class="tag is-dark">FocusHistoryService</span>
         you can go back in focus history using <span class="tag is-dark">focusHistoryService.focusPrevious()</span>.
-        Put <span class="tag is-dark">FocusHistoryService</span> into app module providers and then inject it into component
+        Put <span class="tag is-dark">FocusHistoryService</span> into app module providers and then inject it into
+        component
         <span class="tag is-dark">constructor(public readonly focusHistoryService: FocusHistoryService)</span> from
         <span class="tag is-dark">ngx-focus-control</span> package.
         Example inputs and also history from History service (elements are mapped to only ids).
@@ -238,6 +239,36 @@
         <div class="message-header"><p>Code</p></div>
         <div class="message-body">
           <pre><code>{{focusHistoryCode}}</code></pre>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Focus switch and case directive -->
+<section class="hero is-info">
+  <div class="hero-body">
+    <div class="container">
+      <p class="title">Focus switch and case directive</p>
+      <p class="subtitle">
+        Focus switch directive on parent element with some variable focuses child element with value provided in
+        focus case directive that matches. It matches first element from top to bottom.
+        Value needs to change, to focus element (if switch variable has got value 0, and you set variable again to 0, element will not be focused).
+        Example shows 3 inputs, that should be focused based on variable provided in focus switch. You can change variable by button click.
+      </p>
+      <ng-container [fuSwitch]="switchValue">
+        <input type="text" placeholder="Input 20" class="input" id="input-20" [fuCase]="'option-1'">
+        <input type="text" placeholder="Input 21" class="input" id="input-21" [fuCase]="'option-2'">
+        <input type="text" placeholder="Input 22" class="input" id="input-22" [fuCase]="'option-3'">
+      </ng-container>
+      <button class="button is-success" (click)="switchValue = 'option-1'">Focus Input 20</button>
+      <button class="button is-success" (click)="switchValue = 'option-2'">Focus Input 21</button>
+      <button class="button is-success" (click)="switchValue = 'option-3'">Focus Input 22</button>
+      <span class="tag is-dark" *ngFor="let id of historyIds">{{id}}</span>
+      <article class="message">
+        <div class="message-header"><p>Code</p></div>
+        <div class="message-body">
+          <pre><code>{{focusSwitchCode}}</code></pre>
         </div>
       </article>
     </div>
