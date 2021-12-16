@@ -2,10 +2,10 @@ import {FocusSwitchDirective} from './focus-switch.directive';
 import {FocusCaseDirective} from './focus-case.directive';
 
 const MOCK_CASE_COMPONENTS: FocusCaseDirective[] = [
-  {value: 1, el: {nativeElement: {focus: jasmine.createSpy()}}},
-  {value: 2, el: {nativeElement: {focus: jasmine.createSpy()}}},
-  {value: 3, el: {nativeElement: {focus: jasmine.createSpy()}}},
-  {value: 3, el: {nativeElement: {focus: jasmine.createSpy()}}},
+  {value: 1, el: {nativeElement: {focus: jasmine.createSpy('focus1')}}},
+  {value: 2, el: {nativeElement: {focus: jasmine.createSpy('focus2')}}},
+  {value: 3, el: {nativeElement: {focus: jasmine.createSpy('focus3')}}},
+  {value: 3, el: {nativeElement: {focus: jasmine.createSpy('focus4')}}},
 ];
 
 describe('FocusSwitchDirective', () => {
@@ -14,35 +14,44 @@ describe('FocusSwitchDirective', () => {
     expect(directive).toBeTruthy();
   });
 
-  it('should match case with value 1', () => {
+  it('should match case with value 1', (done) => {
     const directive = new FocusSwitchDirective();
     directive.cases = MOCK_CASE_COMPONENTS;
     directive.value = 1;
-    expect(MOCK_CASE_COMPONENTS[0].el.nativeElement.focus).toHaveBeenCalled();
+    setTimeout(() => {
+      expect(MOCK_CASE_COMPONENTS[0].el.nativeElement.focus).toHaveBeenCalled();
+      done();
+    });
   });
 
-  it('should match case with value 2', () => {
+  it('should match case with value 2', (done) => {
     const directive = new FocusSwitchDirective();
     directive.cases = MOCK_CASE_COMPONENTS;
     directive.value = 2;
-    expect(MOCK_CASE_COMPONENTS[1].el.nativeElement.focus).toHaveBeenCalled();
+    setTimeout(() => {
+      expect(MOCK_CASE_COMPONENTS[1].el.nativeElement.focus).toHaveBeenCalled();
+      done();
+    });
   });
 
-  it('should match case first occurrence', () => {
+  it('should match case first occurrence', (done) => {
     const directive = new FocusSwitchDirective();
     directive.cases = MOCK_CASE_COMPONENTS;
     directive.value = 3;
-    expect(MOCK_CASE_COMPONENTS[2].el.nativeElement.focus).toHaveBeenCalled();
-    expect(MOCK_CASE_COMPONENTS[3].el.nativeElement.focus).not.toHaveBeenCalled();
+    setTimeout(() => {
+      expect(MOCK_CASE_COMPONENTS[2].el.nativeElement.focus).toHaveBeenCalled();
+      expect(MOCK_CASE_COMPONENTS[3].el.nativeElement.focus).not.toHaveBeenCalled();
+      done();
+    });
   });
 
-  it('should match ngAfterContentInit', () => {
+  it('should match case with value 1, reversed filling', (done) => {
     const directive = new FocusSwitchDirective();
-    // first pass value, then cases
     directive.value = 1;
     directive.cases = MOCK_CASE_COMPONENTS;
-    expect(MOCK_CASE_COMPONENTS[0].el.nativeElement.focus).not.toHaveBeenCalled();
-    directive.ngAfterContentInit();
-    expect(MOCK_CASE_COMPONENTS[0].el.nativeElement.focus).toHaveBeenCalled();
+    setTimeout(() => {
+      expect(MOCK_CASE_COMPONENTS[0].el.nativeElement.focus).toHaveBeenCalled();
+      done();
+    });
   });
 });

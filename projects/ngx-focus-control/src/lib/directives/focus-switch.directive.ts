@@ -1,10 +1,10 @@
-import {AfterContentInit, ContentChildren, Directive, Input} from '@angular/core';
+import {ContentChildren, Directive, Input} from '@angular/core';
 import {FocusCaseDirective} from './focus-case.directive';
 
 @Directive({
   selector: '[fuSwitch]'
 })
-export class FocusSwitchDirective implements AfterContentInit{
+export class FocusSwitchDirective {
 
   @ContentChildren(FocusCaseDirective) cases: FocusCaseDirective[];
   @Input('fuSwitch') set value(val: string | number) {
@@ -15,12 +15,8 @@ export class FocusSwitchDirective implements AfterContentInit{
 
   constructor() { }
 
-  ngAfterContentInit(): void {
-    this.focusByValue();
-  }
-
   focusByValue(): void {
-    this.cases?.find(item => item.value === this._value)?.el.nativeElement.focus();
+    setTimeout(() => this.cases?.find(item => item.value === this._value)?.el.nativeElement.focus());
   }
 
 }

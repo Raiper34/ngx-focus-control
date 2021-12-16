@@ -5,7 +5,7 @@ import {Directive, ElementRef, Input} from '@angular/core';
 })
 export class FocusAutoDirective {
 
-  @Input('fuAuto') set delay(val: number) {
+  @Input('fuAuto') set delay(val: number | undefined) {
     this.focusElement(val);
   }
 

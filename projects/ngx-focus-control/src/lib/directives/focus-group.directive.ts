@@ -31,7 +31,7 @@ export class FocusGroupDirective {
   childKeyDownEventListener: () => void;
   elementBlurEventListener: () => void;
 
-  @Input('fuGroup') config: FocusGroupConfig;
+  @Input('fuGroup') config: FocusGroupConfig | undefined;
 
   get selector(): string {
     return this.config?.selector || DEFAULT_SELECTOR;

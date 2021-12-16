@@ -1,7 +1,5 @@
 import {Directive, ElementRef, Input} from '@angular/core';
 
-const DEFAULT_TIMEOUT = 0;
-
 @Directive({
   selector: '[fuIf]'
 })
@@ -24,9 +22,7 @@ export class FocusIfDirective {
   }
 
   doActionByValue(): void {
-    setTimeout(() =>
-      this._value ? this.el.nativeElement.focus() : this.el.nativeElement.blur(), DEFAULT_TIMEOUT
-    );
+    setTimeout(() => this._value ? this.el.nativeElement.focus() : this.el.nativeElement.blur());
   }
 
 }

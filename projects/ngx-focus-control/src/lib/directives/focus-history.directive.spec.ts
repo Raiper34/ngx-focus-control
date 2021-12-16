@@ -38,7 +38,8 @@ describe('FocusHistoryDirective', () => {
 
   it('should call service on focus', () => {
     const element = fixture.debugElement.query(By.css('#input')).nativeElement;
-    element.focus();
+    element.dispatchEvent(new Event('focus'));
+    fixture.detectChanges();
     const service = TestBed.inject(FocusHistoryService);
     expect(service.pushElement).toHaveBeenCalledWith(element);
   });
