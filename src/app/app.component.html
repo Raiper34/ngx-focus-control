@@ -175,40 +175,22 @@
       <p class="title">Focus if directive</p>
       <p class="subtitle">
         This directive focuses the element when condition bidding changes to True or blurs the element when condition
-        biding changes to False.
-        Example shows input, that should be focused or blurred based on condition provided. You can change condition by
-        button click.
+        bidding changes to False. Instead of primitive value, you can also pass observable, which focuses element when observable emits True and blur element when observable emits False.
+        The first example shows input, that should be focused or blurred based on the condition provided. You can change the condition with
+        a button click. The second example shows input, that focused state is determined by given observable. You can emit True or False by a button
+        click.
       </p>
       <input type="text" placeholder="Input 16" class="input" id="input-16" [fuIf]="condition">
       <button class="button is-warning" (click)="condition = !condition">
         Change condition variable to {{!condition}}, it will {{condition ? 'blur' : 'focus'}}
       </button>
-      <article class="message">
-        <div class="message-header"><p>Code</p></div>
-        <div class="message-body">
-          <pre><code>{{focusIfCode}}</code></pre>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Focus obs directive -->
-<section class="hero is-info">
-  <div class="hero-body">
-    <div class="container">
-      <p class="title">Focus obs directive</p>
-      <p class="subtitle">
-        This directive focuses element when observable emits True and blur element when observable emits False.
-        Example shows input, that focus state is determined by given observable. You can emit True or False by button
-        click.
-      </p>
-      <input type="text" placeholder="Input 17" class="input" id="input-17" [fuObs]="observable$">
+      <input type="text" placeholder="Input 17" class="input" id="input-17" [fuIf]="observable$.asObservable()">
       <button class="button is-success" (click)="observable$.next(true)">Emit True</button>
       <button class="button is-danger" (click)="observable$.next(false)">Emit False</button>
       <article class="message">
         <div class="message-header"><p>Code</p></div>
         <div class="message-body">
+          <pre><code>{{focusIfCode}}</code></pre>
           <pre><code>{{focusObsCode}}</code></pre>
         </div>
       </article>
@@ -217,7 +199,7 @@
 </section>
 
 <!-- Focus history directive and service -->
-<section class="hero">
+<section class="hero is-info">
   <div class="hero-body">
     <div class="container">
       <p class="title">Focus history directive and service</p>
@@ -246,7 +228,7 @@
 </section>
 
 <!-- Focus switch and case directive -->
-<section class="hero is-info">
+<section class="hero">
   <div class="hero-body">
     <div class="container">
       <p class="title">Focus switch and case directive</p>

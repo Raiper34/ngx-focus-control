@@ -6,7 +6,6 @@ import { FocusParentDirective } from './directives/focus-parent.directive';
 import { FocusAutoDirective } from './directives/focus-auto.directive';
 import { FocusLockDirective } from './directives/focus-lock.directive';
 import { FocusIfDirective } from './directives/focus-if.directive';
-import { FocusObservableDirective } from './directives/focus-observable.directive';
 import { FocusHistoryDirective } from './directives/focus-history.directive';
 import { FocusSwitchDirective } from './directives/focus-switch.directive';
 import { FocusCaseDirective } from './directives/focus-case.directive';
@@ -22,7 +21,6 @@ import { FocusCaseDirective } from './directives/focus-case.directive';
     FocusAutoDirective,
     FocusLockDirective,
     FocusIfDirective,
-    FocusObservableDirective,
     FocusHistoryDirective,
     FocusSwitchDirective,
     FocusCaseDirective,
@@ -37,7 +35,6 @@ import { FocusCaseDirective } from './directives/focus-case.directive';
     FocusAutoDirective,
     FocusLockDirective,
     FocusIfDirective,
-    FocusObservableDirective,
     FocusHistoryDirective,
     FocusSwitchDirective,
     FocusCaseDirective,

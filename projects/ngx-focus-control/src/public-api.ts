@@ -8,7 +8,6 @@ export * from './lib/directives/focus-parent.directive';
 export * from './lib/directives/focus-group.directive';
 export * from './lib/directives/focus-lock.directive';
 export * from './lib/directives/focus-if.directive';
-export * from './lib/directives/focus-observable.directive';
 export * from './lib/directives/focus-history.directive';
 export * from './lib/directives/focus-switch.directive';
 export * from './lib/directives/focus-case.directive';
