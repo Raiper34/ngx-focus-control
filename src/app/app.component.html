@@ -19,7 +19,7 @@
         define the delay (0 is default delay).
         Example shows input, that should be automatically focused when you have visited this demo.
       </p>
-      <input type="text" placeholder="Input 0" class="input" id="input-0" [fuAuto]="0">
+      <input type="text" placeholder="Input 0" class="input" id="input-0" [fuAuto]="500">
       <article class="message">
         <div class="message-header"><p>Code</p></div>
         <div class="message-body">
@@ -231,22 +231,25 @@
 <section class="hero">
   <div class="hero-body">
     <div class="container">
-      <p class="title">Focus switch and case directive</p>
+      <p class="title">Focus switch, case and default directive</p>
       <p class="subtitle">
-        Focus switch directive on parent element with some variable focuses child element with value provided in
-        focus case directive that matches. It matches first element from top to bottom.
-        Value needs to change, to focus element (if switch variable has got value 0, and you set variable again to 0, element will not be focused).
-        Example shows 3 inputs, that should be focused based on variable provided in focus switch. You can change variable by button click.
+        Focus switch directive on parent element with some variable focuses child element with the value provided in
+        focus case directive that matches. It matches the first element from top to bottom.
+        If there is no match and you use the focus default directive, the element with this directive is focused.
+        Value needs to change, to focus element (if the switch variable has got value 0, and you set the variable again to 0, the element will not be focused).
+        You can also pass observable into focus switch directive (works similar as in focus if directive).
+        Example shows 4 inputs, that should be focused based on variable provided in the focus switch. You can change the variable with a button click.
       </p>
       <ng-container [fuSwitch]="switchValue">
         <input type="text" placeholder="Input 20" class="input" id="input-20" [fuCase]="'option-1'">
         <input type="text" placeholder="Input 21" class="input" id="input-21" [fuCase]="'option-2'">
         <input type="text" placeholder="Input 22" class="input" id="input-22" [fuCase]="'option-3'">
+        <input type="text" placeholder="Input 23 Default" class="input" id="input-23" fuDefault>
       </ng-container>
       <button class="button is-success" (click)="switchValue = 'option-1'">Focus Input 20</button>
       <button class="button is-success" (click)="switchValue = 'option-2'">Focus Input 21</button>
       <button class="button is-success" (click)="switchValue = 'option-3'">Focus Input 22</button>
-      <span class="tag is-dark" *ngFor="let id of historyIds">{{id}}</span>
+      <button class="button is-success" (click)="switchValue = 'option-100'">Switch to non existing value</button>
       <article class="message">
         <div class="message-header"><p>Code</p></div>
         <div class="message-body">

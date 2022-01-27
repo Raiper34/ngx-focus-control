@@ -50,12 +50,13 @@ locks some area (div, span...). First and last focusable child of directive elem
 together (the next focus target of last child is first child and vice versa), useful for accessible modals.
 - ### Focus if directive
 focuses the element when condition bidding changes to True or blurs the element when condition
-biding changes to False.
+biding changes to False. Instead of primitive value, you can also pass observable, which focuses element when observable emits True and blur element when observable emits False.
 - ### Focus obs directive
 focuses element when observable emits True and blur element when observable emits False.
 - ### Focus history directive and service
 Directive stores focused element into history and thanks for history service `FocusHistoryService`
 you can go back in focus history using `focusHistoryService.focusPrevious()`.
 - ### Focus switch and case directives
-Focus switch directive on parent element with some variable focuses child element with value provided in
-  focus case directive that matches. It matches first element from top to bottom.
+Focus switch directive on parent element with some variable focuses child element with the value provided in
+focus case directive that matches. It matches the first element from top to bottom.
+If there is no match and you use the focus default directive, the element with this directive is focused.
