@@ -7,9 +7,9 @@ import {TestHelper} from '../helpers/test-helper';
 @Component({
   selector: 'lib-test-component',
   template: `
-    <input id="input-1" [fuControl]="{next: '#input-3', previous: '#input-2'}">
-    <input id="input-2" [fuControl]="{next: '#input-1', previous: '#input-3'}">
-    <input id="input-3" [fuControl]="{next: '#input-2', previous: '#input-1'}">
+    <input id="input-1" [fuControl]="{next: '#input-3', previous: input2}">
+    <input id="input-2" #input2 [fuControl]="{next: '#input-1', previous: '#input-3'}">
+    <input id="input-3" [fuControl]="{next: input2, previous: '#input-1'}">
   `
 })
 class TestComponent {}
@@ -44,5 +44,17 @@ describe('FocusControlDirective', () => {
     const focusedElement = fixture.debugElement.query(By.css('#input-2'));
     helper.tab(focusedElement, true);
     helper.checkFocus('#input-3');
+  });
+
+  it('should go to next user defined element using HtmlElement', () => {
+    const focusedElement = fixture.debugElement.query(By.css('#input-3'));
+    helper.tab(focusedElement);
+    helper.checkFocus('#input-2');
+  });
+
+  it('should go to previous user defined element using HtmlElement', () => {
+    const focusedElement = fixture.debugElement.query(By.css('#input-1'));
+    helper.tab(focusedElement, true);
+    helper.checkFocus('#input-2');
   });
 });

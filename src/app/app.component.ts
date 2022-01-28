@@ -16,9 +16,9 @@ export class AppComponent {
   focusAutoCode = `<input type="text" placeholder="Input 0" class="input" id="input-0" [fuAuto]="0">`;
 
   focusControlCode = `
-  <input type="text" placeholder="Input 1" class="input" id="input-1" [fuControl]="{next: '#input-3', previous: '#input-2'}">
-  <input type="text" placeholder="Input 2" class="input" id="input-2" [fuControl]="{next: '#input-1', previous: '#input-3'}">
-  <input type="text" placeholder="Input 3" class="input" id="input-3" [fuControl]="{next: '#input-2', previous: '#input-1'}">`;
+  <input type="text" placeholder="Input 1" class="input" id="input-1" [fuControl]="{next: '#input-3', previous: input2}">
+  <input type="text" #input2 placeholder="Input 2" class="input" id="input-2" [fuControl]="{next: '#input-1', previous: '#input-3'}">
+  <input type="text" placeholder="Input 3" class="input" id="input-3" [fuControl]="{next: input2, previous: '#input-1'}">`;
 
   focusSelectorCode = `
   <input type="text" placeholder="Input 4" class="input focus-selector-item" [fuSelector]="'.focus-selector-item'">

@@ -3,8 +3,8 @@ import {DOCUMENT} from '@angular/common';
 import {Keys} from '../helpers/keys.enum';
 
 interface FocusControlConfig {
-  previous?: string;
-  next?: string;
+  previous?: string | HTMLElement;
+  next?: string | HTMLElement;
 }
 
 @Directive({
@@ -29,11 +29,19 @@ export class FocusControlDirective {
     if ($event.key === Keys.Tab) {
       if ($event.shiftKey && this.config.previous) {
         $event.preventDefault();
-        (this.document.querySelector(this.config.previous) as HTMLElement)?.focus();
+        this.focusElement(this.config.previous);
       } else if (!$event.shiftKey && this.config.next) {
         $event.preventDefault();
-        (this.document.querySelector((this.config.next)) as HTMLElement)?.focus();
+        this.focusElement(this.config.next);
       }
+    }
+  }
+
+  private focusElement(element: string | HTMLElement): void {
+    if (typeof element === 'string') {
+      this.document.querySelector(element)?.focus();
+    } else {
+      element.focus();
     }
   }
 }
