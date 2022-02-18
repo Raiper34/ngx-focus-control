@@ -4,8 +4,8 @@
 ![NPM](https://img.shields.io/npm/l/ngx-focus-control)
 [![demo](https://badgen.net/badge/demo/online/orange)](https://ngx-focus-control.netlify.app/)
 [![stack blitz](https://badgen.net/badge/stackblitz/online/orange)](https://stackblitz.com/edit/angular-ivy-nsumon)
-
-# Ngx-focus-control
+![ngc focus control logo](ngx-focus-control-logo.svg)
+# Ngx Focus Control
 Angular library to provide tools to work with focus and focusable elements to improve user interfaces and accessibility.
 
 # Instalation
