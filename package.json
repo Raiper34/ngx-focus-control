@@ -65,6 +65,10 @@
     {
       "from": "CHANGELOG.md",
       "to": "dist/ngx-focus-control/CHANGELOG.md"
+    },
+    {
+      "from": "logo.svg",
+      "to": "dist/ngx-focus-control/logo.svg"
     }
   ]
 }
