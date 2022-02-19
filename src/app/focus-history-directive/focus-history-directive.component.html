@@ -1,0 +1,14 @@
+<app-helper title="Focus history directive and service" [code]="focusHistoryCode">
+  Directive stores focused element into history and thanks for history service <span class="tag is-dark">FocusHistoryService</span>
+  you can go back in focus history using <span class="tag is-dark">focusHistoryService.focusPrevious()</span>.
+  Put <span class="tag is-dark">FocusHistoryService</span> into app module providers and then inject it into
+  component
+  <span class="tag is-dark">constructor(public readonly focusHistoryService: FocusHistoryService)</span> from
+  <span class="tag is-dark">ngx-focus-control</span> package.
+  Example inputs and also history from History service (elements are mapped to only ids).
+  Focus inputs multiple time and then click on button, see history.
+  <input type="text" placeholder="Input 18" class="input" id="input-18" fuHistory>
+  <input type="text" placeholder="Input 19" class="input" id="input-19" fuHistory>
+  <button class="button is-success" (click)="focusHistoryService.focusPrevious()">Focus previous</button>
+  <span class="tag is-dark" *ngFor="let id of historyIds">{{id}}</span>
+</app-helper>

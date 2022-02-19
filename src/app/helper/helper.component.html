@@ -1,0 +1,8 @@
+<p class="subtitle">{{title}}</p>
+<ng-content></ng-content>
+<article class="message" *ngIf="code">
+  <div class="message-header"><p>Code</p></div>
+  <div class="message-body">
+    <pre><code>{{code}}</code></pre>
+  </div>
+</article>

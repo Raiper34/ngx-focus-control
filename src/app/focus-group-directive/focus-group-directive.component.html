@@ -1,0 +1,13 @@
+<app-helper title="Focus group directive" [code]="focusGroupCode">
+  This directive allows merging focusable elements into the group. The user focuses the whole group and can enter
+  into this group by Enter press and leave the group by Escape press.
+  Example shows the box with the group of buttons (buttons are not accessible, only when the user enters the
+  group).
+  Focus the first div and enter group <span class="tag is-dark">ENTER</span> then leave the group <span
+  class="tag is-dark">ESCAPE</span> or navigate <span class="tag is-dark">TAB</span> and <span
+  class="tag is-dark">SHIFT + TAB</span>).
+  <div tabindex="0" id="group-1" class="box focus-selector-parent" [fuGroup]="{selector: '.focus-group-item'}">
+    <input type="text" tabindex="-1" placeholder="Input 11" class="input focus-group-item" id="input-11">
+    <input type="text" tabindex="-1" placeholder="Input 12" class="input focus-group-item" id="input-12">
+  </div>
+</app-helper>

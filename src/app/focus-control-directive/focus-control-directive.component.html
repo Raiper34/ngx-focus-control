@@ -1,0 +1,13 @@
+<app-helper title="Focus control directive" [code]="focusControlCode">
+  This directive allows the user to manually define the next and/or previous focus target.
+  Example shows how to revert direction of focus.
+  Focus the first element and navigate using the keyboard (<span class="tag is-dark">TAB</span> and <span
+  class="tag is-dark">SHIFT + TAB</span>).
+  <br>
+  <input type="text" placeholder="Input 1" class="input" id="input-1"
+         [fuControl]="{next: '#input-3', previous: input2}">
+  <input type="text" #input2 placeholder="Input 2" class="input" id="input-2"
+         [fuControl]="{next: '#input-1', previous: '#input-3'}">
+  <input type="text" placeholder="Input 3" class="input" id="input-3"
+         [fuControl]="{next: input2, previous: '#input-1'}">
+</app-helper>
