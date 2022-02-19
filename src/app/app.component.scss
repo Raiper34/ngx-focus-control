@@ -1,7 +1,0 @@
-$focusColor: hsl(348, 100%, 61%);
-
-*:focus {
-  outline: none !important;
-  border-color: $focusColor;
-  box-shadow: 0 0 10px $focusColor;
-}

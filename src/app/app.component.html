@@ -1,261 +1,63 @@
-<nav class="navbar is-info" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a href="/" class="navbar-item title has-text-white	">Ngx Focus Control</a>
-  </div>
-  <div class="navbar-end">
-    <a class="navbar-item" href="https://github.com/Raiper34/ngx-focus-control">
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
-    </a>
-  </div>
-</nav>
-
-<!-- Focus auto directive -->
 <section class="hero">
   <div class="hero-body">
     <div class="container">
-      <p class="title">Focus auto directive</p>
+      <p class="title">Ngx focus control</p>
       <p class="subtitle">
-        This directive focuses the element after ngAfterViewInit hook and when the delay bidding changes. The user can
-        define the delay (0 is default delay).
-        Example shows input, that should be automatically focused when you have visited this demo.
+        Library to provide tools to work with focus and focusable elements to improve user interfaces and accessibility.
       </p>
-      <input type="text" placeholder="Input 0" class="input" id="input-0" [fuAuto]="500">
-      <article class="message">
-        <div class="message-header"><p>Code</p></div>
-        <div class="message-body">
-          <pre><code>{{focusAutoCode}}</code></pre>
+      <div class="tile">
+        <div class="tile is-9">
+          <div class="container">
+          <a href="https://badge.fury.io/js/ngx-focus-control"><img src="https://badge.fury.io/js/ngx-focus-control.svg" alt="npm version"></a>
+          <a href="https://circleci.com/gh/Raiper34/ngx-focus-control"><img src="https://circleci.com/gh/Raiper34/ngx-focus-control.svg?style=shield" alt="CircleCI"></a>
+          <a href="https://img.shields.io/bundlephobia/min/ngx-focus-control"><img src="https://img.shields.io/bundlephobia/min/ngx-focus-control" alt="npm bundle size"></a>
+          <a href="https://img.shields.io/npm/l/ngx-focus-control"><img src="https://img.shields.io/npm/l/ngx-focus-control" alt="NPM"></a>
+          <a href="https://ngx-focus-control.netlify.app/"><img src="https://badgen.net/badge/demo/online/orange" alt="demo"></a>
+          <a href="https://stackblitz.com/edit/angular-ivy-nsumon"><img src="https://badgen.net/badge/stackblitz/online/orange" alt="stack blitz"></a>
+          <br>
+          <img src="assets/logo.svg" alt="logo">
+            <br>
+            Angular library to provide tools to work with focus and focusable elements to improve user interfaces and accessibility.
+            <article class="message">
+              <div class="message-body">
+                <pre><code>{{code}}</code></pre>
+              </div>
+            </article>
+          </div>
         </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Focus control directive -->
-<section class="hero is-info">
-  <div class="hero-body">
-    <div class="container">
-      <p class="title">Focus control directive</p>
-      <p class="subtitle">
-        This directive allows the user to manually define the next and/or previous focus target.
-        Example shows how to revert direction of focus.
-        Focus the first element and navigate using the keyboard (<span class="tag is-dark">TAB</span> and <span
-        class="tag is-dark">SHIFT + TAB</span>).
-      </p>
-      <input type="text" placeholder="Input 1" class="input" id="input-1"
-             [fuControl]="{next: '#input-3', previous: input2}">
-      <input type="text" #input2 placeholder="Input 2" class="input" id="input-2"
-             [fuControl]="{next: '#input-1', previous: '#input-3'}">
-      <input type="text" placeholder="Input 3" class="input" id="input-3"
-             [fuControl]="{next: input2, previous: '#input-1'}">
-      <article class="message">
-        <div class="message-header"><p>Code</p></div>
-        <div class="message-body">
-          <pre><code>{{focusControlCode}}</code></pre>
+        <div class="tile is-3">
+          <aside class="menu">
+            <p class="menu-label">
+              Basic
+            </p>
+            <ul class="menu-list">
+              <li><a routerLink="/installation" routerLinkActive="is-active">Instalation</a></li>
+            </ul>
+            <p class="menu-label">
+              Directives
+            </p>
+            <ul class="menu-list">
+              <li><a routerLink="/focus-auto-directive" routerLinkActive="is-active">Focus auto directive</a></li>
+              <li><a routerLink="/focus-control-directive" routerLinkActive="is-active">Focus control directive</a></li>
+              <li><a routerLink="/focus-selector-directive" routerLinkActive="is-active">Focus selector directive</a></li>
+              <li><a routerLink="/focus-parent-directive" routerLinkActive="is-active">Focus parent directive</a></li>
+              <li><a routerLink="/focus-group-directive" routerLinkActive="is-active">Focus group directive</a></li>
+              <li><a routerLink="/focus-lock-directive" routerLinkActive="is-active">Focus lock directive</a></li>
+              <li><a routerLink="/focus-if-directive" routerLinkActive="is-active">Focus if directive</a></li>
+              <li><a routerLink="/focus-switch-directive" routerLinkActive="is-active">Focus switch</a></li>
+              <li><a routerLink="/focus-history-directive" routerLinkActive="is-active">Focus history directive</a></li>
+            </ul>
+          </aside>
         </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Focus selector directive -->
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <p class="title">Focus selector directive</p>
-      <p class="subtitle">
-        This directive allows the user to manually define the next and previous focus target by the given class.
-        Example shows how to skip element between elements with this class (element is still accessible by mouse).
-        Focus the first element and navigate using the keyboard (<span class="tag is-dark">TAB</span> and <span
-        class="tag is-dark">SHIFT + TAB</span>).
-      </p>
-      <input type="text" placeholder="Input 4" class="input focus-selector-item"
-             [fuSelector]="'.focus-selector-item'">
-      <input type="text" placeholder="Input 5" class="input">
-      <input type="text" placeholder="Input 6" class="input focus-selector-item"
-             [fuSelector]="'.focus-selector-item'">
-      <article class="message">
-        <div class="message-header"><p>Code</p></div>
-        <div class="message-body">
-          <pre><code>{{focusSelectorCode}}</code></pre>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Focus parent directive -->
-<section class="hero is-info">
-  <div class="hero-body">
-    <div class="container">
-      <p class="title">Focus parent directive</p>
-      <p class="subtitle">
-        This directive behaves very similarly to Focus selector directive, only the user can access focusable child
-        elements with this directive by pressing Enter.
-        Example shows how to focus div element and its content (content is focusable by click or enter).
-        Focus the first div and navigate using the keyboard (<span class="tag is-dark">TAB</span> and <span
-        class="tag is-dark">SHIFT + TAB</span> and <span class="tag is-dark">ENTER</span>).
-      </p>
-      <div tabindex="0" id="parent-1" class="box focus-selector-parent" [fuParent]="'.focus-selector-parent'">
-        <input type="text" placeholder="Input 7" class="input" id="input-7">
-        <input type="text" placeholder="Input 8" class="input" id="input-8">
       </div>
-      <div tabindex="0" id="parent-2" class="box focus-selector-parent" [fuParent]="'.focus-selector-parent'">
-        <input type="text" placeholder="Input 9" class="input" id="input-9">
-        <input type="text" placeholder="Input 10" class="input" id="input-10">
-      </div>
-      <article class="message">
-        <div class="message-header"><p>Code</p></div>
-        <div class="message-body">
-          <pre><code>{{focusParentCode}}</code></pre>
-        </div>
-      </article>
     </div>
   </div>
 </section>
 
-<!-- Focus group directive -->
-<section class="hero">
+<section class="hero is-primary">
   <div class="hero-body">
     <div class="container">
-      <p class="title">Focus group directive</p>
-      <p class="subtitle">
-        This directive allows merging focusable elements into the group. The user focuses the whole group and can enter
-        into this group by Enter press and leave the group by Escape press.
-        Example shows the box with the group of buttons (buttons are not accessible, only when the user enters the
-        group).
-        Focus the first div and enter group <span class="tag is-dark">ENTER</span> then leave the group <span
-        class="tag is-dark">ESCAPE</span> or navigate <span class="tag is-dark">TAB</span> and <span
-        class="tag is-dark">SHIFT + TAB</span>).
-      </p>
-      <div tabindex="0" id="group-1" class="box focus-selector-parent" [fuGroup]="{selector: '.focus-group-item'}">
-        <input type="text" tabindex="-1" placeholder="Input 11" class="input focus-group-item" id="input-11">
-        <input type="text" tabindex="-1" placeholder="Input 12" class="input focus-group-item" id="input-12">
-      </div>
-      <article class="message">
-        <div class="message-header"><p>Code</p></div>
-        <div class="message-body">
-          <pre><code>{{focusGroupCode}}</code></pre>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Focus lock directive -->
-<section class="hero is-info">
-  <div class="hero-body">
-    <div class="container">
-      <p class="title">Focus lock directive</p>
-      <p class="subtitle">
-        This directive locks some area (div, span...). First and last focusable child of directive element are connected
-        together (the next focus target of last child is first child and vice versa), useful for accessible modals.
-        Example shows the box, that you can not leave with the keyboard, when you have focused some element.
-        Focus the first element and navigate using the keyboard (<span class="tag is-dark">TAB</span> and <span
-        class="tag is-dark">SHIFT + TAB</span>).
-      </p>
-      <div id="lock-1" class="box focus-selector-parent" fuLock>
-        <input type="text" placeholder="Input 13" class="input" id="input-13">
-        <input type="text" placeholder="Input 14" class="input" id="input-14">
-        <input type="text" placeholder="Input 15" class="input" id="input-15">
-      </div>
-      <article class="message">
-        <div class="message-header"><p>Code</p></div>
-        <div class="message-body">
-          <pre><code>{{focusLockCode}}</code></pre>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Focus if directive -->
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <p class="title">Focus if directive</p>
-      <p class="subtitle">
-        This directive focuses the element when condition bidding changes to True or blurs the element when condition
-        bidding changes to False. Instead of primitive value, you can also pass observable, which focuses element when observable emits True and blur element when observable emits False.
-        The first example shows input, that should be focused or blurred based on the condition provided. You can change the condition with
-        a button click. The second example shows input, that focused state is determined by given observable. You can emit True or False by a button
-        click.
-      </p>
-      <input type="text" placeholder="Input 16" class="input" id="input-16" [fuIf]="condition">
-      <button class="button is-warning" (click)="condition = !condition">
-        Change condition variable to {{!condition}}, it will {{condition ? 'blur' : 'focus'}}
-      </button>
-      <input type="text" placeholder="Input 17" class="input" id="input-17" [fuIf]="observable$.asObservable()">
-      <button class="button is-success" (click)="observable$.next(true)">Emit True</button>
-      <button class="button is-danger" (click)="observable$.next(false)">Emit False</button>
-      <article class="message">
-        <div class="message-header"><p>Code</p></div>
-        <div class="message-body">
-          <pre><code>{{focusIfCode}}</code></pre>
-          <pre><code>{{focusObsCode}}</code></pre>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Focus history directive and service -->
-<section class="hero is-info">
-  <div class="hero-body">
-    <div class="container">
-      <p class="title">Focus history directive and service</p>
-      <p class="subtitle">
-        Directive stores focused element into history and thanks for history service <span class="tag is-dark">FocusHistoryService</span>
-        you can go back in focus history using <span class="tag is-dark">focusHistoryService.focusPrevious()</span>.
-        Put <span class="tag is-dark">FocusHistoryService</span> into app module providers and then inject it into
-        component
-        <span class="tag is-dark">constructor(public readonly focusHistoryService: FocusHistoryService)</span> from
-        <span class="tag is-dark">ngx-focus-control</span> package.
-        Example inputs and also history from History service (elements are mapped to only ids).
-        Focus inputs multiple time and then click on button, see history.
-      </p>
-      <input type="text" placeholder="Input 18" class="input" id="input-18" fuHistory>
-      <input type="text" placeholder="Input 19" class="input" id="input-19" fuHistory>
-      <button class="button is-success" (click)="focusHistoryService.focusPrevious()">Focus previous</button>
-      <span class="tag is-dark" *ngFor="let id of historyIds">{{id}}</span>
-      <article class="message">
-        <div class="message-header"><p>Code</p></div>
-        <div class="message-body">
-          <pre><code>{{focusHistoryCode}}</code></pre>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Focus switch and case directive -->
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <p class="title">Focus switch, case and default directive</p>
-      <p class="subtitle">
-        Focus switch directive on parent element with some variable focuses child element with the value provided in
-        focus case directive that matches. It matches the first element from top to bottom.
-        If there is no match and you use the focus default directive, the element with this directive is focused.
-        Value needs to change, to focus element (if the switch variable has got value 0, and you set the variable again to 0, the element will not be focused).
-        You can also pass observable into focus switch directive (works similar as in focus if directive).
-        Example shows 4 inputs, that should be focused based on variable provided in the focus switch. You can change the variable with a button click.
-      </p>
-      <ng-container [fuSwitch]="switchValue">
-        <input type="text" placeholder="Input 20" class="input" id="input-20" [fuCase]="'option-1'">
-        <input type="text" placeholder="Input 21" class="input" id="input-21" [fuCase]="'option-2'">
-        <input type="text" placeholder="Input 22" class="input" id="input-22" [fuCase]="'option-3'">
-        <input type="text" placeholder="Input 23 Default" class="input" id="input-23" fuDefault>
-      </ng-container>
-      <button class="button is-success" (click)="switchValue = 'option-1'">Focus Input 20</button>
-      <button class="button is-success" (click)="switchValue = 'option-2'">Focus Input 21</button>
-      <button class="button is-success" (click)="switchValue = 'option-3'">Focus Input 22</button>
-      <button class="button is-success" (click)="switchValue = 'option-100'">Switch to non existing value</button>
-      <article class="message">
-        <div class="message-header"><p>Code</p></div>
-        <div class="message-body">
-          <pre><code>{{focusSwitchCode}}</code></pre>
-        </div>
-      </article>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </section>
