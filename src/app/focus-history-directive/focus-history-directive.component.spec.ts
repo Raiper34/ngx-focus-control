@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FocusHistoryDirectiveComponent } from './focus-history-directive.component';
+import {FocusHistoryService} from 'ngx-focus-control';
 
 describe('FocusHistoryDirectiveComponent', () => {
   let component: FocusHistoryDirectiveComponent;
@@ -8,7 +9,8 @@ describe('FocusHistoryDirectiveComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FocusHistoryDirectiveComponent ]
+      declarations: [ FocusHistoryDirectiveComponent ],
+      providers: [FocusHistoryService]
     })
     .compileComponents();
   }));

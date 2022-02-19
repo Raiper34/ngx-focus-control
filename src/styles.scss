@@ -1,2 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
+$focusColor: hsl(217, 71%, 53%);
+
+div:focus {
+  outline: none !important;
+  border-color: $focusColor !important;
+  box-shadow: 0 0 10px $focusColor !important;
+}

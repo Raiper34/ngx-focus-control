@@ -9,6 +9,6 @@
   Focus inputs multiple time and then click on button, see history.
   <input type="text" placeholder="Input 18" class="input" id="input-18" fuHistory>
   <input type="text" placeholder="Input 19" class="input" id="input-19" fuHistory>
-  <button class="button is-success" (click)="focusHistoryService.focusPrevious()">Focus previous</button>
+  <button class="button is-warning" (click)="focusHistoryService.focusPrevious()">Focus previous</button>
   <span class="tag is-dark" *ngFor="let id of historyIds">{{id}}</span>
 </app-helper>
