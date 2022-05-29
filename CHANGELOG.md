@@ -1,3 +1,7 @@
+#### 2.2.1 (2022-05-29)
+
+* add clearHistory method to focus history service
+
 #### 2.2.0 (2022-01-29)
 
 * Focus control directive accepts now also HTMLElement, not only query selector string
