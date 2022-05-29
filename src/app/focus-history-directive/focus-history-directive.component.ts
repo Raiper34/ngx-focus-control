@@ -9,9 +9,9 @@ import {FocusHistoryService} from 'ngx-focus-control';
 export class FocusHistoryDirectiveComponent implements OnInit {
 
   focusHistoryCode = `
-    <input type="text" placeholder="Input 18" class="input" id="input-18" fuHistory>
-    <input type="text" placeholder="Input 19" class="input" id="input-19" fuHistory>
-    <button class="button is-success" (click)="focusHistoryService.focusPrevious()">Focus previous</button>
+    <input type="text" placeholder="Input 1" class="input" id="input-1" fuHistory>
+    <input type="text" placeholder="Input 2" class="input" id="input-2" fuHistory>
+    <button class="button is-info" (click)="focusHistoryService.focusPrevious()">Focus previous</button>
   `;
 
   get historyIds(): string[] {
@@ -21,6 +21,7 @@ export class FocusHistoryDirectiveComponent implements OnInit {
   constructor(public readonly focusHistoryService: FocusHistoryService) { }
 
   ngOnInit(): void {
+    this.focusHistoryService.clearHistory();
   }
 
 }

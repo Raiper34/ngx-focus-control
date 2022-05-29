@@ -9,6 +9,7 @@ export class HelperComponent implements OnInit {
 
   @Input() title = '';
   @Input() code = '';
+  @Input() isDeprecated = false;
 
   constructor() { }
 

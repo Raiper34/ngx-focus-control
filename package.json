@@ -7,7 +7,7 @@
     "build": "ng build",
     "build:lib": "ng build ngx-focus-control --configuration production && copy-files-from-to",
     "test": "ng test",
-    "test:lib": "ng test ngx-focus-control",
+    "test:lib": "ng test ngx-focus-control --code-coverage",
     "test:lib:dev": "ng test ngx-focus-control --watch=true --browsers=Chrome",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
@@ -27,6 +27,9 @@
     "@angular/platform-browser": "~9.1.4",
     "@angular/platform-browser-dynamic": "~9.1.4",
     "@angular/router": "~9.1.4",
+    "bulma": "^0.9.3",
+    "ngx-highlightjs": "^4.1.4",
+    "npm-ls-scripts": "^0.1.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

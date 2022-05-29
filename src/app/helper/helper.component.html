@@ -1,8 +1,9 @@
-<p class="subtitle">{{title}}</p>
+<p class="subtitle"><span class="tag is-danger" *ngIf="isDeprecated">DEPRECATED</span> {{title}}</p>
 <ng-content></ng-content>
+<br>
 <article class="message" *ngIf="code">
   <div class="message-header"><p>Code</p></div>
-  <div class="message-body">
-    <pre><code>{{code}}</code></pre>
+  <div class="message-body code-background">
+    <pre class="code-background"><code [highlight]="code" [languages]="['html', 'typescript']"></code></pre>
   </div>
 </article>

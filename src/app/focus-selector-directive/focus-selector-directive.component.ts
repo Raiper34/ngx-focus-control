@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class FocusSelectorDirectiveComponent implements OnInit {
 
   focusSelectorCode = `
-  <input type="text" placeholder="Input 4" class="input focus-selector-item" [fuSelector]="'.focus-selector-item'">
-  <input type="text" placeholder="Input 5" class="input">
-  <input type="text" placeholder="Input 6" class="input focus-selector-item" [fuSelector]="'.focus-selector-item'">`;
+  <input placeholder="Input 1" class="input focus-selector-item" [fuSelector]="'.focus-selector-item'">
+  <input placeholder="Input 2" class="input">
+  <input placeholder="Input 3" class="input focus-selector-item" [fuSelector]="'.focus-selector-item'">`;
 
   constructor() { }
 

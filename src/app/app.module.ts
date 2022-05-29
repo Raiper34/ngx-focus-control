@@ -15,6 +15,7 @@ import { FocusIfDirectiveComponent } from './focus-if-directive/focus-if-directi
 import { FocusHistoryDirectiveComponent } from './focus-history-directive/focus-history-directive.component';
 import { FocusSwitchDirectiveComponent } from './focus-switch-directive/focus-switch-directive.component';
 import { InstalationComponent } from './instalation/instalation.component';
+import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
 const routes: Routes = [
   {path: '', redirectTo: '/installation', pathMatch: 'full'},
@@ -48,10 +49,24 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    HighlightModule,
 
     NgxFocusControlModule,
   ],
-  providers: [FocusHistoryService],
+  providers: [
+    FocusHistoryService,
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: {
+        coreLibraryLoader: () => import('highlight.js/lib/core'),
+        languages: {
+          typescript: () => import('highlight.js/lib/languages/typescript'),
+          css: () => import('highlight.js/lib/languages/css'),
+          xml: () => import('highlight.js/lib/languages/xml')
+        }
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

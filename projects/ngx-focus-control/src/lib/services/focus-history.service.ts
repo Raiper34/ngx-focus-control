@@ -21,6 +21,10 @@ export class FocusHistoryService {
     this.focusedElements = this.focusedElements.slice(0, -1);
   }
 
+  clearHistory(): void {
+    this.focusedElements = [];
+  }
+
   getLastElement(): HTMLElement {
     return this.focusedElements[this.focusedElements.length - 1];
   }

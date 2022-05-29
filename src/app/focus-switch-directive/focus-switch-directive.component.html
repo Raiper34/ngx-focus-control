@@ -1,18 +1,19 @@
 <app-helper title="Focus switch, case and default directive" [code]="focusSwitchCode">
-  Focus switch directive on parent element with some variable focuses child element with the value provided in
+  <p>Focus switch directive on parent element with some variable focuses child element with the value provided in
   focus case directive that matches. It matches the first element from top to bottom.
   If there is no match and you use the focus default directive, the element with this directive is focused.
-  Value needs to change, to focus element (if the switch variable has got value 0, and you set the variable again to 0, the element will not be focused).
-  You can also pass observable into focus switch directive (works similar as in focus if directive).
-  Example shows 4 inputs, that should be focused based on variable provided in the focus switch. You can change the variable with a button click.
+  Value needs to change, to focus the element (if the switch variable has got value 0, and you set the variable again to 0, the element will not be focused).
+  You can also pass observable into focus switch directive (works similar as in focus if directive).</p>
+  <br>
+  <p>Example shows 4 inputs, that should be focused based on the variable provided in the focus switch. You can change the variable with a button click.</p>
   <ng-container [fuSwitch]="switchValue">
-    <input type="text" placeholder="Input 20" class="input" id="input-20" [fuCase]="'option-1'">
-    <input type="text" placeholder="Input 21" class="input" id="input-21" [fuCase]="'option-2'">
-    <input type="text" placeholder="Input 22" class="input" id="input-22" [fuCase]="'option-3'">
-    <input type="text" placeholder="Input 23 Default" class="input" id="input-23" fuDefault>
+    <input type="text" placeholder="Input 1" class="input" id="input-1" [fuCase]="'option-1'">
+    <input type="text" placeholder="Input 2" class="input" id="input-2" [fuCase]="'option-2'">
+    <input type="text" placeholder="Input 3" class="input" id="input-3" [fuCase]="'option-3'">
+    <input type="text" placeholder="Input 4 Default" class="input" id="input-4" fuDefault>
   </ng-container>
-  <button class="button is-warning" (click)="switchValue = 'option-1'">Focus Input 20</button>
-  <button class="button is-warning" (click)="switchValue = 'option-2'">Focus Input 21</button>
-  <button class="button is-warning" (click)="switchValue = 'option-3'">Focus Input 22</button>
-  <button class="button is-warning" (click)="switchValue = 'option-100'">Switch to non existing value</button>
+  <button class="button is-info m-1" (click)="switchValue = 'option-1'">Focus Input 1</button>
+  <button class="button is-info m-1" (click)="switchValue = 'option-2'">Focus Input 2</button>
+  <button class="button is-info m-1" (click)="switchValue = 'option-3'">Focus Input 3</button>
+  <button class="button is-info m-1" (click)="switchValue = 'option-100'">Switch to non existing value</button>
 </app-helper>

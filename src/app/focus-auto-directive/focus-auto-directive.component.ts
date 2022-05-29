@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FocusAutoDirectiveComponent implements OnInit {
 
-  focusAutoCode = `<input type="text" placeholder="Input 0" class="input" id="input-0" [fuAuto]="0">`;
+  focusAutoCode = `<input placeholder="Input" class="input" [fuAuto]="500">`;
 
   constructor() { }
 

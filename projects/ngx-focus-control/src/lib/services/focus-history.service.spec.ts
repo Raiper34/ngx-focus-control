@@ -47,4 +47,12 @@ describe('FocusHistoryService', () => {
     expect(element.focus).toHaveBeenCalled();
     expect(service.getHistory()).toEqual([{id: 'el1'}] as HTMLElement[]);
   });
+
+  it('should clear history', () => {
+    service.pushElement({id: 'el1'} as HTMLElement);
+    service.pushElement({id: 'el2'} as HTMLElement);
+    expect(service.getLastElement()).toEqual({id: 'el2'} as HTMLElement);
+    service.clearHistory();
+    expect(service.getHistory().length).toEqual(0);
+  });
 });

@@ -1,12 +1,13 @@
 <app-helper title="Focus lock directive" [code]="focusLockCode">
-  This directive locks some area (div, span...). First and last focusable child of directive element are connected
-  together (the next focus target of last child is first child and vice versa), useful for accessible modals.
-  Example shows the box, that you can not leave with the keyboard, when you have focused some element.
+  <p>This directive locks some area (div, span...). The first and last focusable child of the directive element are connected
+  together (the next focus target of the last child is the first child and vice versa), useful for accessible modals.</p>
+  <br>
+  <p>Example shows the box, that you can not leave with the keyboard when you have focused some element.
   Focus the first element and navigate using the keyboard (<span class="tag is-dark">TAB</span> and <span
-  class="tag is-dark">SHIFT + TAB</span>).
+  class="tag is-dark">SHIFT + TAB</span>).</p>
   <div id="lock-1" class="box focus-selector-parent" fuLock>
-    <input type="text" placeholder="Input 13" class="input" id="input-13">
-    <input type="text" placeholder="Input 14" class="input" id="input-14">
-    <input type="text" placeholder="Input 15" class="input" id="input-15">
+    <input type="text" placeholder="Input 1" class="input" id="input-1">
+    <input type="text" placeholder="Input 2" class="input" id="input-2">
+    <input type="text" placeholder="Input 3" class="input" id="input-3">
   </div>
 </app-helper>

@@ -8,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class FocusGroupDirectiveComponent implements OnInit {
 
   focusGroupCode = `
-    <div tabindex="0" id="group-1" class="box focus-selector-parent" [fuGroup]="{selector: '.focus-group-item'}">
-      <input type="text" tabindex="-1" placeholder="Input 11" class="input focus-group-item" id="input-11">
-      <input type="text" tabindex="-1" placeholder="Input 12" class="input focus-group-item" id="input-12">
-    </div>`;
+  <div tabindex="0" id="group-1" class="box focus-selector-parent" [fuGroup]="{selector: '.focus-group-item'}">
+    <div class="subtitle has-text-black">Group</div>
+    <input type="text" tabindex="-1" placeholder="Input 1" class="input focus-group-item" id="input-1">
+    <input type="text" tabindex="-1" placeholder="Input 2" class="input focus-group-item" id="input-2">
+  </div>`;
 
   constructor() { }
 

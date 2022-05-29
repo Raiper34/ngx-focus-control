@@ -1,14 +1,15 @@
 <app-helper title="Focus if directive" [code]="focusIfCode">
-  This directive focuses the element when condition bidding changes to True or blurs the element when condition
-  bidding changes to False. Instead of primitive value, you can also pass observable, which focuses element when observable emits True and blur element when observable emits False.
-  The first example shows input, that should be focused or blurred based on the condition provided. You can change the condition with
-  a button click. The second example shows input, that focused state is determined by given observable. You can emit True or False by a button
-  click.
-  <input type="text" placeholder="Input 16" class="input" id="input-16" [fuIf]="condition">
-  <button class="button is-warning" (click)="condition = !condition">
+  <p>This directive focuses the element when condition bidding changes to True or blurs the element when condition
+  bidding changes to False. Instead of primitive value, you can also pass observable, which focuses element when observable emits True and blur element when observable emits False.</p>
+  <br>
+  <p>The first example shows input, that should be focused or blurred based on the condition provided. You can change the condition with
+  a button click. The second example shows input, the focused state is determined by a given observable. You can emit True or False with a button
+  click.</p>
+  <input type="text" placeholder="Input 1" class="input" id="input-1" [fuIf]="condition">
+  <button class="button is-info m-1" (click)="condition = !condition">
     Change condition variable to {{!condition}}, it will {{condition ? 'blur' : 'focus'}}
   </button>
-  <input type="text" placeholder="Input 17" class="input" id="input-17" [fuIf]="observable$.asObservable()">
-  <button class="button is-success" (click)="observable$.next(true)">Emit True</button>
-  <button class="button is-danger" (click)="observable$.next(false)">Emit False</button>
+  <input type="text" placeholder="Input 2" class="input" id="input-2" [fuIf]="observable$.asObservable()">
+  <button class="button is-info m-1" (click)="observable$.next(true)">Emit True</button>
+  <button class="button is-info m-1" (click)="observable$.next(false)">Emit False</button>
 </app-helper>

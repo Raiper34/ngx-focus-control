@@ -34,31 +34,20 @@ See [DEMO](https://ngx-focus-control.netlify.app/) app for usage.
 
 # Directives
 - ### Focus auto directive
-focuses the element after ngAfterViewInit hook and when the delay bidding changes. The user can define the delay (0 is default delay).
+auto-focuses element when an element is created, a page is visited, or delay data bidding is changed. Users can define delay of focus. 0 is the default delay when a delay is not specified.
 - ### Focus control directive
 allows the user to manually define the next and/or previous focus target.
-Example shows how to revert direction of focus.
 - ### Focus selector directive
-allows the user to manually define the next and previous focus target by the given class.
-Example shows how to skip element between elements with this class (element is still accessible by mouse).
+allows the user to manually define the next and previous focus target by the given query selector.
 - ### Focus parent directive
-behaves very similarly to Focus selector directive, only the user can access focusable child
-elements with this directive by pressing Enter.
+behaves very similarly to Focus selector directive, only the user can access focusable child elements with this directive by pressing Enter.
 - ### Focus group directive
-allows merging focusable elements into the group. The user focuses the whole group and can enter
-into this group by Enter press and leave the group by Escape press.
+allows merging focusable elements into the group. The user focuses the whole group and can enter into this group by Enter press and leave the group by Escape press.
 - ### Focus lock directive
-locks some area (div, span...). First and last focusable child of directive element are connected
-together (the next focus target of last child is first child and vice versa), useful for accessible modals.
+locks some area (div, span...). The first and last focusable child of the directive element are connected together (the next focus target of the last child is the first child and vice versa), useful for accessible modals.
 - ### Focus if directive
-focuses the element when condition bidding changes to True or blurs the element when condition
-biding changes to False. Instead of primitive value, you can also pass observable, which focuses element when observable emits True and blur element when observable emits False.
-- ### Focus obs directive
-focuses element when observable emits True and blur element when observable emits False.
-- ### Focus history directive and service
-Directive stores focused element into history and thanks for history service `FocusHistoryService`
-you can go back in focus history using `focusHistoryService.focusPrevious()`.
-- ### Focus switch and case directives
-Focus switch directive on parent element with some variable focuses child element with the value provided in
-focus case directive that matches. It matches the first element from top to bottom.
-If there is no match and you use the focus default directive, the element with this directive is focused.
+focuses the element when condition bidding changes to True or blurs the element when condition bidding changes to False. Instead of primitive value, you can also pass observable, which focuses element when observable emits True and blur element when observable emits False.
+- ### Focus history directive
+stores focused elements into history and thanks to history service `FocusHistoryService` you can go back in focus history using `focusHistoryService.focusPrevious()`.
+- ### Focus switch directives
+on parent element with some variable focuses child element with the value provided in focus case directive that matches. It matches the first element from top to bottom. If there is no match and you use the focus default directive, the element with this directive is focused. Value needs to change, to focus the element (if the switch variable has got value 0, and you set the variable again to 0, the element will not be focused). You can also pass observable into focus switch directive (works similar as in focus if directive).

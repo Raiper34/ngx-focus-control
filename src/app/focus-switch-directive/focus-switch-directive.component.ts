@@ -10,15 +10,15 @@ export class FocusSwitchDirectiveComponent implements OnInit {
   switchValue = '';
   focusSwitchCode = `
     <ng-container [fuSwitch]="switchValue">
-      <input type="text" placeholder="Input 20" class="input" id="input-20" [fuCase]="'option-1'">
-      <input type="text" placeholder="Input 21" class="input" id="input-21" [fuCase]="'option-2'">
-      <input type="text" placeholder="Input 22" class="input" id="input-22" [fuCase]="'option-3'">
-      <input type="text" placeholder="Input 23 Default" class="input" id="input-23" fuDefault>
+      <input type="text" placeholder="Input 1" class="input" id="input-1" [fuCase]="'option-1'">
+      <input type="text" placeholder="Input 2" class="input" id="input-2" [fuCase]="'option-2'">
+      <input type="text" placeholder="Input 3" class="input" id="input-3" [fuCase]="'option-3'">
+      <input type="text" placeholder="Input 4 Default" class="input" id="input-4" fuDefault>
     </ng-container>
-    <button class="button is-success" (click)="switchValue = 'option-1'">Focus Input 20</button>
-    <button class="button is-success" (click)="switchValue = 'option-2'">Focus Input 21</button>
-    <button class="button is-success" (click)="switchValue = 'option-3'">Focus Input 22</button>
-    <button class="button is-success" (click)="switchValue = 'option-100'">Switch to non existing value</button>
+    <button class="button is-success" (click)="switchValue = 'option-1'">Focus Input 1</button>
+    <button class="button is-success" (click)="switchValue = 'option-2'">Focus Input 2</button>
+    <button class="button is-success" (click)="switchValue = 'option-3'">Focus Input 3</button>
+    <button class="button is-success" (click)="switchValue = 'option-100'">Switch to non-existing value</button>
   `;
 
   constructor() { }

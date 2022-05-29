@@ -1,11 +1,10 @@
 <app-helper title="Focus selector directive" [code]="focusSelectorCode">
-  This directive allows the user to manually define the next and previous focus target by the given class.
-  Example shows how to skip element between elements with this class (element is still accessible by mouse).
+  <p>This directive allows the user to manually define the next and previous focus target by the given query selector.</p>
+  <br>
+  <p>Example shows how to skip element between elements with given class (element is still accessible by mouse).
   Focus the first element and navigate using the keyboard (<span class="tag is-dark">TAB</span> and <span
-  class="tag is-dark">SHIFT + TAB</span>).
-  <input type="text" placeholder="Input 4" class="input focus-selector-item"
-         [fuSelector]="'.focus-selector-item'">
-  <input type="text" placeholder="Input 5" class="input">
-  <input type="text" placeholder="Input 6" class="input focus-selector-item"
-         [fuSelector]="'.focus-selector-item'">
+  class="tag is-dark">SHIFT + TAB</span>).</p>
+  <input placeholder="Input 1" class="input focus-selector-item" [fuSelector]="'.focus-selector-item'">
+  <input placeholder="Input 2" class="input">
+  <input placeholder="Input 3" class="input focus-selector-item" [fuSelector]="'.focus-selector-item'">
 </app-helper>

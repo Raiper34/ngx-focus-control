@@ -1,6 +1,7 @@
 <app-helper title="Focus auto directive" [code]="focusAutoCode">
-  This directive focuses the element after ngAfterViewInit hook and when the delay bidding changes. The user can
-  define the delay (0 is default delay).
-  Example shows input, that should be automatically focused when you have visited this demo.
-  <input type="text" placeholder="Input 0" class="input" id="input-0" [fuAuto]="500">
+  <p>The directive auto-focuses element when an element is created, a page is visited, or delay data bidding is changed.
+  Users can define delay of focus. 0 is the default delay when a delay is not specified.</p>
+  <br>
+  <p>Input in the example should be auto-focused when you have visited this page.</p>
+  <input placeholder="Input" class="input" [fuAuto]="500">
 </app-helper>
