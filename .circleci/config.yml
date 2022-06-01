@@ -14,7 +14,6 @@ jobs:
           paths:
             - "node_modules"
       - run: xvfb-run -a npm run lint:lib
-      - run: xvfb-run -a npm run test:lib
+      - run: xvfb-run -a npm run test:lib:coveralls
       - run: xvfb-run -a npm run build:lib
-      - run: cat ./coverage/ngx-focus-control/lcov.info  | ./node_modules/coveralls/bin/coveralls.js
 

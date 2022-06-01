@@ -1,5 +1,6 @@
 [![npm version](https://badge.fury.io/js/ngx-focus-control.svg)](https://badge.fury.io/js/ngx-focus-control)
 [![CircleCI](https://circleci.com/gh/Raiper34/ngx-focus-control.svg?style=shield)](https://circleci.com/gh/Raiper34/ngx-focus-control)
+[![Coverage Status](https://coveralls.io/repos/github/Raiper34/ngx-focus-control/badge.svg?branch=main)](https://coveralls.io/github/Raiper34/ngx-focus-control?branch=main)
 [![GitHub issues](https://img.shields.io/github/issues/Raiper34/ngx-focus-control)](https://github.com/Raiper34/ngx-focus-control/issues)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/ngx-focus-control)
 ![NPM](https://img.shields.io/npm/l/ngx-focus-control)
