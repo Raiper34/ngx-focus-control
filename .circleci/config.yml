@@ -16,5 +16,5 @@ jobs:
       - run: xvfb-run -a npm run lint:lib
       - run: xvfb-run -a npm run test:lib
       - run: xvfb-run -a npm run build:lib
-      - run: cat ./coverage/angular-hello-world/lcov.info  | ./node_modules/coveralls/bin/coveralls.js
+      - run: cat ./coverage/angx-focus-control/lcov.info  | ./node_modules/coveralls/bin/coveralls.js
 
