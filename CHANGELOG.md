@@ -1,3 +1,7 @@
+#### 3.0.0 (2022-06-09)
+
+* remove deprecated focus parent directive
+
 #### 2.2.1 (2022-05-29)
 
 * add clearHistory method to focus history service
