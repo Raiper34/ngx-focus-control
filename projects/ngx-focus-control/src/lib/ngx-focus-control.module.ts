@@ -17,7 +17,6 @@ import { FocusDefaultDirective } from './directives/focus-default.directive';
     FocusControlDirective,
     FocusSelectorDirective,
     FocusGroupDirective,
-    FocusParentDirective,
     FocusAutoDirective,
     FocusLockDirective,
     FocusIfDirective,
