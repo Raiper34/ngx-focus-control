@@ -8,7 +8,6 @@ import {RouterModule, Routes} from '@angular/router';
 import { FocusControlDirectiveComponent } from './focus-control-directive/focus-control-directive.component';
 import { HelperComponent } from './helper/helper.component';
 import { FocusSelectorDirectiveComponent } from './focus-selector-directive/focus-selector-directive.component';
-import { FocusParentDirectiveComponent } from './focus-parent-directive/focus-parent-directive.component';
 import { FocusGroupDirectiveComponent } from './focus-group-directive/focus-group-directive.component';
 import { FocusLockDirectiveComponent } from './focus-lock-directive/focus-lock-directive.component';
 import { FocusIfDirectiveComponent } from './focus-if-directive/focus-if-directive.component';
@@ -23,7 +22,6 @@ const routes: Routes = [
   {path: 'focus-auto-directive', component: FocusAutoDirectiveComponent},
   {path: 'focus-control-directive', component: FocusControlDirectiveComponent},
   {path: 'focus-selector-directive', component: FocusSelectorDirectiveComponent},
-  {path: 'focus-parent-directive', component: FocusParentDirectiveComponent},
   {path: 'focus-group-directive', component: FocusGroupDirectiveComponent},
   {path: 'focus-lock-directive', component: FocusLockDirectiveComponent},
   {path: 'focus-if-directive', component: FocusIfDirectiveComponent},
@@ -38,7 +36,6 @@ const routes: Routes = [
     FocusControlDirectiveComponent,
     HelperComponent,
     FocusSelectorDirectiveComponent,
-    FocusParentDirectiveComponent,
     FocusGroupDirectiveComponent,
     FocusLockDirectiveComponent,
     FocusIfDirectiveComponent,

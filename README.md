@@ -40,8 +40,6 @@ auto-focuses element when an element is created, a page is visited, or delay dat
 allows the user to manually define the next and/or previous focus target.
 - ### Focus selector directive
 allows the user to manually define the next and previous focus target by the given query selector.
-- ### Focus parent directive
-behaves very similarly to Focus selector directive, only the user can access focusable child elements with this directive by pressing Enter.
 - ### Focus group directive
 allows merging focusable elements into the group. The user focuses the whole group and can enter into this group by Enter press and leave the group by Escape press.
 - ### Focus lock directive
