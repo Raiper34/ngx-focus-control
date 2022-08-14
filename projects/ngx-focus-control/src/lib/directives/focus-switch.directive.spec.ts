@@ -106,4 +106,23 @@ describe('FocusSwitchDirective', () => {
       done();
     });
   });
+
+  it('should match default when no cases present', (done) => {
+    const directive = new FocusSwitchDirective();
+    directive.value = 100;
+    directive.cases = [];
+    directive.defaultCase = DEFAULT_CASE;
+    setTimeout(() => {
+      expect(DEFAULT_CASE.el.nativeElement.focus).toHaveBeenCalled();
+      done();
+    });
+  });
+
+  it('should unsubscribe when component is destroyed', () => {
+    const directive = new FocusSwitchDirective();
+    directive.unsubscribe$ = jasmine.createSpyObj('unsubscribe$', ['next', 'complete']);
+    directive.ngOnDestroy();
+    expect(directive.unsubscribe$.next).toHaveBeenCalled();
+    expect(directive.unsubscribe$.complete).toHaveBeenCalled();
+  });
 });
