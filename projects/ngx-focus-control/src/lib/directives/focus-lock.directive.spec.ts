@@ -62,4 +62,16 @@ describe('FocusLockDirective', () => {
       done();
     }, 0);
   });
+
+  it('should do nothing when other than tab is pressed', (done) => {
+    setTimeout( () => {
+      const focusedElement = fixture.debugElement.query(By.css('#lock-2-item-1'));
+      helper.enter(focusedElement);
+      helper.checkFocusMultiple([
+        '#lock-1-item-1', '#lock-1-item-2', '#lock-1-item-3', '#lock-1-item-4', '#lock-1',
+        '#lock-2-item-1', '#lock-2-item-2', '#lock-2-item-3', '#lock-2-item-4', '#lock-2',
+      ], true);
+      done();
+    }, 0);
+  });
 });
