@@ -57,4 +57,12 @@ describe('FocusControlDirective', () => {
     helper.tab(focusedElement, true);
     helper.checkFocus('#input-2');
   });
+
+  it('should do nothing when other than tab is pressed', () => {
+    const focusedElement = fixture.debugElement.query(By.css('#input-1'));
+    helper.escape(focusedElement);
+    helper.checkFocus('#input-1', true);
+    helper.checkFocus('#input-2', true);
+    helper.checkFocus('#input-3', true);
+  });
 });
