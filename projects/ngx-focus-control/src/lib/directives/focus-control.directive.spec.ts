@@ -10,6 +10,8 @@ import {TestHelper} from '../helpers/test-helper';
     <input id="input-1" [fuControl]="{next: '#input-3', previous: input2}">
     <input id="input-2" #input2 [fuControl]="{next: '#input-1', previous: '#input-3'}">
     <input id="input-3" [fuControl]="{next: input2, previous: '#input-1'}">
+    <input id="input-4" [fuControl]="{}">
+    <input id="input-5" [fuControl]="{next: '#non-existing'}">
   `
 })
 class TestComponent {}
@@ -61,8 +63,24 @@ describe('FocusControlDirective', () => {
   it('should do nothing when other than tab is pressed', () => {
     const focusedElement = fixture.debugElement.query(By.css('#input-1'));
     helper.escape(focusedElement);
-    helper.checkFocus('#input-1', true);
-    helper.checkFocus('#input-2', true);
-    helper.checkFocus('#input-3', true);
+    helper.checkFocusMultiple(['#input-1', '#input-2', '#input-3', '#input-4', '#input-5'], true);
+  });
+
+  it('should do nothing when next is not defined', () => {
+    const focusedElement = fixture.debugElement.query(By.css('#input-4'));
+    helper.tab(focusedElement);
+    helper.checkFocusMultiple(['#input-1', '#input-2', '#input-3', '#input-4', '#input-5'], true);
+  });
+
+  it('should do nothing when previous is not defined', () => {
+    const focusedElement = fixture.debugElement.query(By.css('#input-4'));
+    helper.tab(focusedElement, true);
+    helper.checkFocusMultiple(['#input-1', '#input-2', '#input-3', '#input-4', '#input-5'], true);
+  });
+
+  it('should do nothing when next or previous element does not exist', () => {
+    const focusedElement = fixture.debugElement.query(By.css('#input-5'));
+    helper.tab(focusedElement);
+    helper.checkFocusMultiple(['#input-1', '#input-2', '#input-3', '#input-4', '#input-5'], true);
   });
 });
