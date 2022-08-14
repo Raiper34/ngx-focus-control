@@ -110,7 +110,6 @@ describe('FocusSwitchDirective', () => {
   it('should match default when no cases present', (done) => {
     const directive = new FocusSwitchDirective();
     directive.value = 100;
-    directive.cases = [];
     directive.defaultCase = DEFAULT_CASE;
     setTimeout(() => {
       expect(DEFAULT_CASE.el.nativeElement.focus).toHaveBeenCalled();
