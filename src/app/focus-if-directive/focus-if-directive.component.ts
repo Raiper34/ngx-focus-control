@@ -12,7 +12,7 @@ export class FocusIfDirectiveComponent implements OnInit {
   observable$ = new Subject<boolean>();
 
   focusIfCode = `<input type="text" placeholder="Input 16" class="input" id="input-16" [fuIf]="condition">
-<input type="text" placeholder="Input 17" class="input" id="input-17" [fuObs]="observable$">`;
+<input type="text" placeholder="Input 17" class="input" id="input-17" [fuIf]="observable$">`;
 
   constructor() { }
 
