@@ -6,6 +6,7 @@
 ![NPM](https://img.shields.io/npm/l/ngx-focus-control)
 [![demo](https://badgen.net/badge/demo/online/orange)](https://ngx-focus-control.netlify.app/)
 [![stack blitz](https://badgen.net/badge/stackblitz/online/orange)](https://stackblitz.com/edit/angular-ivy-nsumon)
+[![Gitter](https://img.shields.io/gitter/room/raiper34/ngx-focus-control)](https://gitter.im/ngx-focus-control/community?source=orgpage)
 
 ![ngc focus control logo](logo.svg)
 # Ngx Focus Control
