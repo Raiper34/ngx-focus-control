@@ -20,11 +20,11 @@ export class FocusSelectorDirective {
       if ($event.shiftKey && index > 0) {
         $event.preventDefault();
         $event.stopPropagation();
-        (elements[index - 1] as HTMLElement)?.focus();
+        (elements[index - 1] as HTMLElement).focus();
       } else if (!$event.shiftKey && index < elements.length - 1) {
         $event.preventDefault();
         $event.stopPropagation();
-        (elements[index + 1] as HTMLElement)?.focus();
+        (elements[index + 1] as HTMLElement).focus();
       }
     }
   }

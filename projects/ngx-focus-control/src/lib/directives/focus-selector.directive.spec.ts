@@ -45,4 +45,16 @@ describe('FocusSelectorDirective', () => {
     helper.tab(focusedElement, true);
     helper.checkFocus('#input-1');
   });
+
+  it('should do nothing when other than tab is pressed', () => {
+    const focusedElement = fixture.debugElement.query(By.css('#input-3'));
+    helper.escape(focusedElement);
+    helper.checkFocusMultiple(['#input-1', '#input-2', '#input-3'], true);
+  });
+
+  it('should do nothing when last element with given class is focused and want go to next', () => {
+    const focusedElement = fixture.debugElement.query(By.css('#input-3'));
+    helper.tab(focusedElement);
+    helper.checkFocusMultiple(['#input-1', '#input-2', '#input-3'], true);
+  });
 });
