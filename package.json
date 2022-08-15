@@ -45,6 +45,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.20.37",
     "@types/puppeteer": "^5.4.4",
+    "auto-changelog": "^2.4.0",
     "codelyzer": "^5.1.2",
     "copy-files-from-to": "^3.2.2",
     "coveralls": "^3.1.1",
@@ -76,5 +77,10 @@
       "from": "logo.svg",
       "to": "dist/ngx-focus-control/logo.svg"
     }
-  ]
+  ],
+  "auto-changelog": {
+    "unreleased": true,
+    "ignoreCommitPattern": "((release))",
+    "startingVersion": "3.0.0"
+  }
 }
