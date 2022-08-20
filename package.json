@@ -80,8 +80,9 @@
     }
   ],
   "auto-changelog": {
-    "unreleased": true,
-    "ignoreCommitPattern": "((release))",
-    "startingVersion": "3.0.0"
+    "ignoreCommitPattern": "(test\\()|(release\\()|(chore\\()",
+    "startingVersion": "3.0.1",
+    "commitLimit": 30,
+    "hideCredit": true
   }
 }
