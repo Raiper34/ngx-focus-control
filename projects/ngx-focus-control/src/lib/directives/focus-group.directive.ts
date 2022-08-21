@@ -1,4 +1,4 @@
-import {Directive, ElementRef, HostListener, Inject, Input, Renderer2} from '@angular/core';
+import {Directive, ElementRef, HostListener, Inject, Input, OnDestroy, OnInit, Renderer2} from '@angular/core';
 import {Helper} from '../helpers/helper';
 import {DOCUMENT} from '@angular/common';
 import {Keys} from '../helpers/keys.enum';
@@ -21,23 +21,29 @@ interface FocusGroupConfig {
 const DEFAULT_SELECTOR = ':scope > *';
 const DEFAULT_TAB_INDEX = 0;
 const TAB_GROUP_CONTEXT_ATTR = 'data-tabGroupContext';
+const MUTATION_OBSERVER_CONFIG = {
+  childList: true,
+  subtree: true,
+};
 
 @Directive({
   selector: '[fuGroup]'
 })
-export class FocusGroupDirective {
+export class FocusGroupDirective implements OnInit, OnDestroy {
 
-  activeElement: HTMLElement;
-  childKeyDownEventListener: () => void;
-  elementBlurEventListener: () => void;
+  private activeElement: HTMLElement;
+  private childKeyDownEventListener: () => void;
+  private elementBlurEventListener: () => void;
+  private elementClickEventListeners = new WeakMap();
+  private observer: MutationObserver;
 
   @Input('fuGroup') config: FocusGroupConfig | undefined;
 
-  get selector(): string {
+  private get selector(): string {
     return this.config?.selector || DEFAULT_SELECTOR;
   }
 
-  get tabIndex(): number {
+  private get tabIndex(): number {
     return this.config?.tabIndex || DEFAULT_TAB_INDEX;
   }
 
@@ -46,12 +52,33 @@ export class FocusGroupDirective {
               protected readonly el: ElementRef) {
   }
 
+  ngOnInit(): void {
+    const elements = this.getFocusableChildren();
+    this.setupClickEventListeners(elements);
+    this.observer = new MutationObserver(() => this.setupClickEventListeners(elements));
+    this.observer.observe(this.el.nativeElement, MUTATION_OBSERVER_CONFIG);
+  }
+
+  ngOnDestroy(): void {
+    this.getFocusableChildren().forEach(element =>
+      this.elementClickEventListeners.has(element) && this.elementClickEventListeners.get(element)()
+    );
+    this.observer.disconnect();
+  }
+
   @HostListener(`keyup.${ControlKeys.enterGroup}`, ['$event']) enterGroup($event: KeyboardEvent) {
     Helper.stopEvent($event);
     const elements = this.getFocusableChildren();
     if (!this.activeElement && elements[0]) {
       this.initializeElement(elements[0]);
     }
+  }
+
+  private setupClickEventListeners(elements: HTMLElement[]): void {
+    elements.forEach(element => {
+      this.elementClickEventListeners.set(element,
+        this.renderer.listen(element, 'click', this.initializeElement.bind(this, element)));
+    });
   }
 
   private getFocusableChildren(): HTMLElement[] {
