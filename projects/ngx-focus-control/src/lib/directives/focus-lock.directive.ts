@@ -5,14 +5,19 @@ import {Helper} from '../helpers/helper';
 import {Keys} from '../helpers/keys.enum';
 
 const DELAY = 0;
+const MUTATION_OBSERVER_CONFIG = {
+  childList: true,
+  subtree: true,
+};
 
 @Directive({
   selector: '[fuLock]'
 })
 export class FocusLockDirective implements OnInit, OnDestroy {
 
-  firstChildKeyDownEventListener: () => void;
-  lastChildKeyDownEventListener: () => void;
+  private firstChildKeyDownEventListener: () => void;
+  private lastChildKeyDownEventListener: () => void;
+  private observer: MutationObserver;
 
   constructor(@Inject(DOCUMENT) protected readonly document: any,
               protected readonly renderer: Renderer2,
@@ -21,14 +26,19 @@ export class FocusLockDirective implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     setTimeout(() => this.createLock(), DELAY);
+    this.observer = new MutationObserver(() => this.createLock());
+    this.observer.observe(this.el.nativeElement, MUTATION_OBSERVER_CONFIG);
   }
 
   ngOnDestroy(): void {
     this.disposeLock();
+    this.observer.disconnect();
   }
 
   private createLock(): void {
+    this.disposeLock();
     const [firstChild, lastChild] = this.getChildren();
+    console.log(lastChild);
     this.firstChildKeyDownEventListener = this.renderer.listen(firstChild, 'keydown',
       ($event: KeyboardEvent) => this.childKeyDown($event, lastChild, true));
     this.lastChildKeyDownEventListener = this.renderer.listen(lastChild, 'keydown',

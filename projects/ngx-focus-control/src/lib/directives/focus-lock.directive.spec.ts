@@ -1,8 +1,10 @@
 import {FocusLockDirective} from './focus-lock.directive';
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {TestHelper} from '../helpers/test-helper';
+
+const DELAY = 1000;
 
 @Component({
   selector: 'lib-test-component',
@@ -12,6 +14,7 @@ import {TestHelper} from '../helpers/test-helper';
       <li id="lock-1-item-2" tabindex="0">2</li>
       <li id="lock-1-item-3" tabindex="0">3</li>
       <li id="lock-1-item-4" tabindex="0">4</li>
+      <li id="lock-1-item-5" *ngIf="shouldBePresent" tabindex="0">5</li>
     </ul>
     <ul id="lock-2" fuLock>
       <li id="lock-2-item-1" tabindex="0">1</li>
@@ -21,7 +24,13 @@ import {TestHelper} from '../helpers/test-helper';
     </ul>
   `
 })
-class TestComponent {
+class TestComponent implements OnInit {
+  shouldBePresent = false;
+
+  ngOnInit(): void {
+    setTimeout(() => this.shouldBePresent = !this.shouldBePresent, DELAY);
+  }
+
 }
 
 describe('FocusLockDirective', () => {
@@ -52,6 +61,22 @@ describe('FocusLockDirective', () => {
       helper.checkFocus('#lock-1-item-1');
       done();
     }, 0);
+  });
+
+  it('should go to first element from last when children are changed', (done) => {
+    setTimeout( () => {
+      fixture.detectChanges();
+    }, DELAY);
+    setTimeout( () => {
+      fixture.detectChanges();
+      const focusedElement = fixture.debugElement.query(By.css('#lock-1-item-4'));
+      helper.tab(focusedElement);
+      helper.checkFocus('#lock-1-item-1', true);
+      const focusedElement2 = fixture.debugElement.query(By.css('#lock-1-item-5'));
+      helper.tab(focusedElement2);
+      helper.checkFocus('#lock-1-item-1');
+      done();
+    }, DELAY + 1);
   });
 
   it('should go to last element from first', (done) => {
