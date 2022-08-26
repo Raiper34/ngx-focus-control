@@ -18,10 +18,10 @@ const DELAY = 1000;
     </ul>
   `
 })
-class TestComponent implements OnInit {
+class TestComponent {
   shouldBePresent = false;
 
-  ngOnInit(): void {
+  startTimeout(): void {
     setTimeout(() => this.shouldBePresent = !this.shouldBePresent, DELAY);
   }
 
@@ -164,6 +164,7 @@ describe('FocusGroupDirective', () => {
   }));
 
   it('should work when dom changes', (done) => {
+    fixture.componentInstance.startTimeout();
     setTimeout( () => {
       fixture.detectChanges();
     }, DELAY);

@@ -32,7 +32,7 @@ export class TestHelper<T> {
     }
   }
 
-  checkFocusMultiple(selectors: string[], revertExpect: boolean = false): void {
+  checkFocusMultiple(selectors: string[], revertExpect: boolean): void {
     selectors.forEach(selector => this.checkFocus(selector, revertExpect));
   }
 

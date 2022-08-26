@@ -26,7 +26,7 @@ export class FocusHistoryService {
   }
 
   getLastElement(): HTMLElement {
-    return this.focusedElements[this.focusedElements.length - 1];
+    return this.focusedElements.length ? this.focusedElements[this.focusedElements.length - 1] : null;
   }
 
   focusPrevious(): void {

@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
 import { FocusHistoryService } from './focus-history.service';
-import createSpy = jasmine.createSpy;
 
 describe('FocusHistoryService', () => {
   let service: FocusHistoryService;
@@ -53,6 +52,12 @@ describe('FocusHistoryService', () => {
     service.pushElement({id: 'el2'} as HTMLElement);
     expect(service.getLastElement()).toEqual({id: 'el2'} as HTMLElement);
     service.clearHistory();
+    expect(service.getHistory().length).toEqual(0);
+  });
+
+  it('should not raise exception when pop on empty array', () => {
+    service.clearHistory();
+    service.focusPrevious();
     expect(service.getHistory().length).toEqual(0);
   });
 });
