@@ -18,8 +18,10 @@ interface FocusGroupConfig {
   tabIndex?: number;
 }
 
-const DEFAULT_SELECTOR = ':scope > *';
-const DEFAULT_TAB_INDEX = 0;
+const DEFAULT_CONFIG = {
+  selector: ':scope > *',
+  tabIndex: 0,
+};
 const TAB_GROUP_CONTEXT_ATTR = 'data-tabGroupContext';
 const MUTATION_OBSERVER_CONFIG = {
   childList: true,
@@ -37,15 +39,15 @@ export class FocusGroupDirective implements OnInit, OnDestroy {
   private elementClickEventListeners = new WeakMap();
   private observer: MutationObserver;
 
-  @Input('fuGroup') config: FocusGroupConfig | undefined;
-
-  private get selector(): string {
-    return this.config?.selector || DEFAULT_SELECTOR;
+  @Input('fuGroup') set config(val: FocusGroupConfig | undefined) {
+    this._config = val;
   }
 
-  private get tabIndex(): number {
-    return this.config?.tabIndex || DEFAULT_TAB_INDEX;
+  get config(): FocusGroupConfig | undefined {
+    return {...DEFAULT_CONFIG, ...this._config};
   }
+
+  private _config: FocusGroupConfig | undefined;
 
   constructor(@Inject(DOCUMENT) protected readonly document: any,
               protected readonly renderer: Renderer2,
@@ -82,7 +84,7 @@ export class FocusGroupDirective implements OnInit, OnDestroy {
   }
 
   private getFocusableChildren(): HTMLElement[] {
-    return Array.from(this.el.nativeElement.querySelectorAll(this.selector));
+    return Array.from(this.el.nativeElement.querySelectorAll(this.config.selector));
   }
 
   private elementBlurFunction($event: Event): void {
@@ -91,16 +93,14 @@ export class FocusGroupDirective implements OnInit, OnDestroy {
   }
 
   private initializeElement(element: HTMLElement): void {
-    if (element) {
-      this.activeElement = element;
-      if (element.hasAttribute('tabindex')) {
-        this.renderer.setAttribute(element, TAB_GROUP_CONTEXT_ATTR, element.getAttribute('tabindex'));
-      }
-      this.renderer.setAttribute(element, 'tabindex', String(this.tabIndex));
-      this.childKeyDownEventListener = this.renderer.listen(element, 'keydown', this.childKeyDown.bind(this));
-      this.elementBlurEventListener = this.renderer.listen(element, 'blur', this.elementBlurFunction.bind(this));
-      element.focus();
+    this.activeElement = element;
+    if (element.hasAttribute('tabindex')) {
+      this.renderer.setAttribute(element, TAB_GROUP_CONTEXT_ATTR, element.getAttribute('tabindex'));
     }
+    this.renderer.setAttribute(element, 'tabindex', String(this.config.tabIndex));
+    this.childKeyDownEventListener = this.renderer.listen(element, 'keydown', this.childKeyDown.bind(this));
+    this.elementBlurEventListener = this.renderer.listen(element, 'blur', this.elementBlurFunction.bind(this));
+    element.focus();
   }
 
   private disposeElement(element: HTMLElement): void {

@@ -38,7 +38,6 @@ export class FocusLockDirective implements OnInit, OnDestroy {
   private createLock(): void {
     this.disposeLock();
     const [firstChild, lastChild] = this.getChildren();
-    console.log(lastChild);
     this.firstChildKeyDownEventListener = this.renderer.listen(firstChild, 'keydown',
       ($event: KeyboardEvent) => this.childKeyDown($event, lastChild, true));
     this.lastChildKeyDownEventListener = this.renderer.listen(lastChild, 'keydown',

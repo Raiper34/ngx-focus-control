@@ -8,18 +8,19 @@ export class TestHelper<T> {
               private readonly expectFn: any) {}
 
   tab(element: DebugElement, shiftKey: boolean = false): void {
-    element.nativeElement.dispatchEvent(new KeyboardEvent('keydown', {key: 'Tab', shiftKey}));
-    this.fixture.detectChanges();
+    this.keyDown(element, 'Tab', shiftKey);
+  }
+
+  keyDown(element: DebugElement, key: string, shiftKey: boolean = false): void {
+    this.onKey(element, 'keydown', key, shiftKey);
   }
 
   enter(element: DebugElement): void {
-    element.nativeElement.dispatchEvent(new KeyboardEvent('keyup', {key: 'Enter'}));
-    this.fixture.detectChanges();
+    this.onKey(element, 'keyup', 'Enter');
   }
 
   escape(element: DebugElement): void {
-    element.nativeElement.dispatchEvent(new KeyboardEvent('keydown', {key: 'Escape'}));
-    this.fixture.detectChanges();
+    this.keyDown(element, 'Escape');
   }
 
   checkFocus(selector: string, revertExpect: boolean = false): void {
@@ -33,6 +34,11 @@ export class TestHelper<T> {
 
   checkFocusMultiple(selectors: string[], revertExpect: boolean = false): void {
     selectors.forEach(selector => this.checkFocus(selector, revertExpect));
+  }
+
+  private onKey(element: DebugElement, type: 'keydown' | 'keyup', key: string, shiftKey: boolean = false): void {
+    element.nativeElement.dispatchEvent(new KeyboardEvent(type, {key, shiftKey}));
+    this.fixture.detectChanges();
   }
 
 }
