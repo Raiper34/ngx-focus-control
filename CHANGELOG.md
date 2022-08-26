@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [3.1.0](https://github.com/Raiper34/ngx-focus-control/compare/3.0.1...3.1.0)
+
+> 27 August 2022
+
+- feat(focus-lock-directive): focus lock directive is able to work also when new elements are added or elements are removed [`cb9e0d9`](https://github.com/Raiper34/ngx-focus-control/commit/cb9e0d986c79a27f05bdd40d449574a891ee5b5f)
+- fix(focus-group-directive): focus group directive also enter into group when user click on some child [`540126e`](https://github.com/Raiper34/ngx-focus-control/commit/540126e03c30938e564a1a6a58efd30caaf10a45)
+
 #### [3.0.1](https://github.com/Raiper34/ngx-focus-control/compare/3.0.0...3.0.1)
 
 > 15 August 2022

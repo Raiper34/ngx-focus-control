@@ -1,6 +1,6 @@
 {
   "name": "ngx-focus-control",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "Library to provide tools to work with focus and focusable elements to improve user interfaces and accessibility.",
   "repository": "https://github.com/Raiper34/ngx-focus-control",
   "homepage": "https://ngx-focus-control.netlify.app",
