@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production",
     "build:lib": "ng build ngx-focus-control --configuration production && copy-files-from-to",
     "test": "ng test",
     "test:lib": "ng test ngx-focus-control --code-coverage",
@@ -16,7 +16,7 @@
     "lint:lib:fix": "npm run lint:lib -- --fix",
     "e2e": "ng e2e",
     "changelog": "auto-changelog",
-    "deploy": "npm run build && netlify deploy --dir=dist/ngx-focus-control-app --configuration production",
+    "deploy": "npm run build && netlify deploy --dir=dist/ngx-focus-control-app --prod",
     "publish": "npm run build:lib && cd dist/ngx-focus-control && npm publish"
   },
   "private": true,

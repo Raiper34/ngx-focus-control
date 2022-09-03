@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+### [4.0.0](https://github.com/Raiper34/ngx-focus-control/compare/3.1.0...4.0.0)
+
+> 3 September 2022
+
+- Feature/angular 14 upgrade [`#31`](https://github.com/Raiper34/ngx-focus-control/pull/31)
+- feature(angular): angular 14 support [`29edbae`](https://github.com/Raiper34/ngx-focus-control/commit/29edbaef278a8bfdc78bc4cf2dc9eb1d964b9cea)
+- feature(angular): angular 14 support [`f65daec`](https://github.com/Raiper34/ngx-focus-control/commit/f65daec45dd9c1273b0602a9407b3f056aa65681)
+- feature(angular): angular 14 support [`a27d664`](https://github.com/Raiper34/ngx-focus-control/commit/a27d664fb9787891bd35ba7a34266ed1bb90f897)
+- feature(angular): angular 14 support [`a48525f`](https://github.com/Raiper34/ngx-focus-control/commit/a48525f307a51a3ed980c1394802ff77877a5849)
+- feature(angular): angular 14 support [`3c57772`](https://github.com/Raiper34/ngx-focus-control/commit/3c57772c1790b80324cfec6c0bd284890f0a65fa)
+- feature(angular): angular 14 support [`60b942f`](https://github.com/Raiper34/ngx-focus-control/commit/60b942fcac86c864ad37203a847eff2f65fe42b3)
+- feature(angular): angular 14 support [`16c9bb3`](https://github.com/Raiper34/ngx-focus-control/commit/16c9bb3e0add619461f30cc1b93fe1bfc207ba8e)
+- feature(angular): angular 14 support [`2f8c708`](https://github.com/Raiper34/ngx-focus-control/commit/2f8c7089fa64e025cfc711cf7684638d7ae2f448)
+- feature(angular): angular 14 support [`7b0b5e3`](https://github.com/Raiper34/ngx-focus-control/commit/7b0b5e3ded8b3102a9193d199b73b92830594b8e)
+- feature(angular): angular 14 support [`7593c21`](https://github.com/Raiper34/ngx-focus-control/commit/7593c2159fb6fbb25c4cde377a5ad2e2c617334f)
+- feature(angular): angular 14 support [`7b71c8c`](https://github.com/Raiper34/ngx-focus-control/commit/7b71c8cf2826bd378a3282bbaa5da64cb635f05a)
+
 #### [3.1.0](https://github.com/Raiper34/ngx-focus-control/compare/3.0.1...3.1.0)
 
 > 27 August 2022
