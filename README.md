@@ -34,7 +34,7 @@ import {NgxFocusControlModule} from 'ngx-focus-control';
 # Version 
 | Angular version | Ngx focus control version |
 |-----------------|---------------------------|
-| \>= 8 && < 14   | 3.x.x                     |
+| \>= 8 && < 14   | 0.0.0 - 3.x.x             |
 | 14              | 4.x.x                     |
 
 # Usage
