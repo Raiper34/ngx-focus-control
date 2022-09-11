@@ -110,3 +110,6 @@ import {FocusHistoryService} from 'ngx-focus-control';
 ...
 constructor(public readonly focusHistoryService: FocusHistoryService) { }
 ```
+
+# License
+MIT
