@@ -12,6 +12,12 @@
 # Ngx Focus Control
 Angular library to provide tools to work with focus and focusable elements to improve user interfaces and accessibility.
 
+# Version compatibility
+| Angular version | Ngx focus control version |
+|-----------------|---------------------------|
+| 8 - 13          | 0.0.0 - 3.x.x             |
+| 14              | 4.x.x                     |
+
 # Instalation
 
 `npm install ngx-focus-control --save`
@@ -30,12 +36,6 @@ import {NgxFocusControlModule} from 'ngx-focus-control';
 // ...
 })
 ```
-
-# Version 
-| Angular version | Ngx focus control version |
-|-----------------|---------------------------|
-| \>= 8 && < 14   | 0.0.0 - 3.x.x             |
-| 14              | 4.x.x                     |
 
 # Usage
 See [DEMO](https://ngx-focus-control.netlify.app/) app for usage.
