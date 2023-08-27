@@ -15,6 +15,8 @@ import { FocusHistoryDirectiveComponent } from './focus-history-directive/focus-
 import { FocusSwitchDirectiveComponent } from './focus-switch-directive/focus-switch-directive.component';
 import { InstalationComponent } from './instalation/instalation.component';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+import {FocusUnleavableDirectiveComponent} from './focus-unleavable-directive/focus-unleavable-directive.component';
+import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {path: '', redirectTo: '/installation', pathMatch: 'full'},
@@ -27,6 +29,7 @@ const routes: Routes = [
   {path: 'focus-if-directive', component: FocusIfDirectiveComponent},
   {path: 'focus-history-directive', component: FocusHistoryDirectiveComponent},
   {path: 'focus-switch-directive', component: FocusSwitchDirectiveComponent},
+  {path: 'focus-unleavable-directive', component: FocusUnleavableDirectiveComponent},
 ];
 
 @NgModule({
@@ -41,12 +44,14 @@ const routes: Routes = [
     FocusIfDirectiveComponent,
     FocusHistoryDirectiveComponent,
     FocusSwitchDirectiveComponent,
+    FocusUnleavableDirectiveComponent,
     InstalationComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HighlightModule,
+    FormsModule,
 
     NgxFocusControlModule,
   ],

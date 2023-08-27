@@ -9,6 +9,7 @@ import { FocusHistoryDirective } from './directives/focus-history.directive';
 import { FocusSwitchDirective } from './directives/focus-switch.directive';
 import { FocusCaseDirective } from './directives/focus-case.directive';
 import { FocusDefaultDirective } from './directives/focus-default.directive';
+import {FocusUnleavableDirective} from './directives/focus-unleavable.directive';
 
 
 
@@ -24,6 +25,7 @@ import { FocusDefaultDirective } from './directives/focus-default.directive';
     FocusSwitchDirective,
     FocusCaseDirective,
     FocusDefaultDirective,
+    FocusUnleavableDirective,
   ],
   imports: [
   ],
@@ -38,6 +40,7 @@ import { FocusDefaultDirective } from './directives/focus-default.directive';
     FocusSwitchDirective,
     FocusCaseDirective,
     FocusDefaultDirective,
+    FocusUnleavableDirective,
   ]
 })
 export class NgxFocusControlModule { }

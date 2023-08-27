@@ -1,0 +1,10 @@
+<app-helper title="Focus unleavable directive" [code]="focusUnleavableCode">
+  <p>The directive does not allow leaving a focusable element when the provided condition is met.</p>
+  <br>
+  <p>
+    Example shows the input, that you can not leave until you write at least 5 characters.
+    Focus the input and try to leave it using the keyboard (<span class="tag is-dark">TAB</span> and <span
+    class="tag is-dark">SHIFT + TAB</span>). Write at least 5 characters and try to leave the input again.
+  </p>
+  <input placeholder="Input 1" class="input" [(ngModel)]="inputContent" [fuUnleavable]="inputContent.length < 5">
+</app-helper>
