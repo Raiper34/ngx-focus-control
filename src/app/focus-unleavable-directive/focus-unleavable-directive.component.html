@@ -1,0 +1,8 @@
+<app-helper title="Focus unleavable directive" [code]="''">
+  <p>The directive auto-focuses element when an element is created, a page is visited, or delay data bidding is changed.
+    Users can define delay of focus. 0 is the default delay when a delay is not specified.</p>
+  <br>
+  <p>Input in the example should be auto-focused when you have visited this page.</p>
+  <input placeholder="Input 1" class="input" [(ngModel)]="inputContent" [fuUnleavable]="inputContent.length < 5">
+  <input placeholder="Input 2" class="input">
+</app-helper>
