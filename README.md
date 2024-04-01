@@ -112,5 +112,11 @@ import {FocusHistoryService} from 'ngx-focus-control';
 constructor(public readonly focusHistoryService: FocusHistoryService) { }
 ```
 
+- ### Focus unleavable directive
+does not allow leaving a focusable element when the provided condition is met.
+```html
+<input placeholder="Input 1" class="input" [(ngModel)]="inputContent" [fuUnleavable]="inputContent.length < 5">
+```
+
 # License
 MIT
