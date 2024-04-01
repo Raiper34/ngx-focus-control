@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [5.1.0](https://github.com/Raiper34/ngx-focus-control/compare/5.0.0...5.1.0)
+
+> 1 April 2024
+
+- feature(unleavable): new unleavable directive presented [`#32`](https://github.com/Raiper34/ngx-focus-control/issues/32)
+
 ### [5.0.0](https://github.com/Raiper34/ngx-focus-control/compare/4.0.0...5.0.0)
 
 > 10 January 2023
