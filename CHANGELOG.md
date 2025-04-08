@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+### [7.0.0](https://github.com/Raiper34/ngx-focus-control/compare/6.0.0...7.0.0)
+
+> 8 April 2025
+
+- feature(angular): angular 17 support [`6cf1ae1`](https://github.com/Raiper34/ngx-focus-control/commit/6cf1ae181cffc8cc631420a8fe47844feecc9271)
+
 ### [6.0.0](https://github.com/Raiper34/ngx-focus-control/compare/5.1.0...6.0.0)
 
 > 8 April 2025
