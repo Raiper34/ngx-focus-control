@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+### [6.0.0](https://github.com/Raiper34/ngx-focus-control/compare/5.1.0...6.0.0)
+
+> 8 April 2025
+
+- feature(angular): angular 15 support [`52194a7`](https://github.com/Raiper34/ngx-focus-control/commit/52194a7ec091b35ac477c0f777361b017aa8142a)
+- docs(readme): add focus unleavable directive into README.md [`68b2a80`](https://github.com/Raiper34/ngx-focus-control/commit/68b2a805a0914652e75f38669e1faabc78a9e826)
+
 #### [5.1.0](https://github.com/Raiper34/ngx-focus-control/compare/5.0.0...5.1.0)
 
 > 1 April 2024
