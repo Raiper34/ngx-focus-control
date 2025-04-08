@@ -19,6 +19,7 @@ Angular library to provide tools to work with focus and focusable elements to im
 | 14              | 4.x.x                     |
 | 15              | 5.x.x                     |
 | 16              | 6.x.x                     |
+| 17              | 7.x.x                     |
 
 # Instalation
 
